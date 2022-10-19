@@ -259,7 +259,7 @@ h1 {
   top: -10px;
 }
 
-.example-2 .wrapper {
+.example-3 .wrapper {
   background: url(https://images.pexels.com/photos/250609/pexels-photo-250609.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/cover no-repeat;
 }
 
@@ -381,7 +381,7 @@ switch($day){
       </div>
     </div>
   </div>';
-  echo ' <div class="example-1 card">
+  echo ' <div class="example-1 exemple-3 card">
     <div class="wrapper">
       <div class="date">
         <span class="day">18</span>
