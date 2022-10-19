@@ -398,6 +398,40 @@ switch($day){
     </div>
   </div>';
     break;
+        case '292':
+    echo ' <div class="example-1 card">
+    <div class="wrapper">
+      <div class="date">
+        <span class="day">18</span>
+        <span class="month">Out</span>
+        <span class="year">2022</span>
+      </div>
+      <div class="data">
+        <div class="content">
+          <span class="author">Autor : Desconhecido </span>
+          <h1 class="title"><a href="https://www.bibliaonline.com.br/nvi/jó/3">Jó 3 e 4</a></h1>
+          <p class="text">Na terra de Uz vivia um homem chamado Jó. Era homem íntegro e justo; temia a Deus e evitava o mal. Tinha ele sete filhos e três filhas, e possuía sete mil ovelhas, três mil camelos, quinhentas parelhas de boi e quinhentos jumentos, e tinha muita gente a seu serviço. Era o homem mais rico do oriente. Jó 1:1-3</p>
+        </div>
+      </div>
+    </div>
+  </div>';
+  echo ' <div class="example-1 example-3 card">
+    <div class="wrapper">
+      <div class="date">
+        <span class="day">18</span>
+        <span class="month">Out</span>
+        <span class="year">2022</span>
+      </div>
+      <div class="data">
+        <div class="content">
+          <span class="author">Autor: Lucas </span>
+          <h1 class="title"><a href="https://www.bibliaonline.com.br/nvi/atos/8">Atos 8 e 9</a></h1>
+          <p class="text">E Saulo estava ali, consentindo na morte de Estêvão. Naquela ocasião desencadeou-se grande perseguição contra a igreja em Jerusalém. Todos, exceto os apóstolos, foram dispersos pelas regiões da Judéia e de Samaria. Alguns homens piedosos sepultaram Estêvão e fizeram por ele grande lamentação. Atos 8:1,2</p>        
+        </div>
+      </div>
+    </div>
+  </div>';
+    break;
   }
 }
 
