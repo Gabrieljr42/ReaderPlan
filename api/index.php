@@ -49,7 +49,8 @@ h1 {
   float: left;
   padding: 0 1.7rem;
   width: 48%;
-  min-width: 400px;
+  margin-bottom: 2rem;
+  min-width: 350px;
 }
 
 .card .menu-content {
