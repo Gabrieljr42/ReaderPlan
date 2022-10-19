@@ -143,7 +143,7 @@ h1 {
 }
 
 .example-1 .wrapper {
-  background: url(https://images.pexels.com/photos/1459495/pexels-photo-1459495.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) 20% 1%/cover no-repeat;
+  background: url(https://images.pexels.com/photos/1154510/pexels-photo-1154510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) 20% 1%/cover no-repeat;
 }
 
 .example-1 .date {
@@ -260,7 +260,7 @@ h1 {
 }
 
 .example-3 .wrapper {
-  background: url(https://images.pexels.com/photos/250609/pexels-photo-250609.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/cover no-repeat;
+  background: url(https://images.pexels.com/photos/54326/runners-male-sport-run-54326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/cover no-repeat;
 }
 
 .example-2 .wrapper:hover .menu-content span {
@@ -381,7 +381,7 @@ switch($day){
       </div>
     </div>
   </div>';
-  echo ' <div class="example-1 exemple-3 card">
+  echo ' <div class="example-1 example-3 card">
     <div class="wrapper">
       <div class="date">
         <span class="day">18</span>
