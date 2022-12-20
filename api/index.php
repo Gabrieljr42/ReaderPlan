@@ -353,7 +353,8 @@ h1 {
 <div class="row">
  <?php $day = getdate()['yday'];
  $day = 7;
- getDay($day);
+ automateGetDay();
+//  getDay($day);
  ?>
   
 </div>
@@ -362,7 +363,200 @@ h1 {
 
 
 <?php
+function automateGetDay(){
+  $books = array(
+    1 => "Gn", 2 => "Êx", 3 => "Lv", 4 => "Nm", 5 => "Dt",
+    6 => "Js", 7 => "Jz", 8 => "Rt", 9 => "1Sm", 10 => "2Sm",
+    11 => "1Rs", 12 => "2Rs", 13 => "1Cr", 14 => "2Cr", 15 => "Ed",
+    16 => "Ne", 17 => "Et", 18 => "Jó", 19 => "Sl", 20 => "Pv",
+    21 => "Ec", 22 => "Ct", 23 => "Is", 24 => "Jr", 25 => "Lm",
+    26 => "Ez", 27 => "Dn", 28 => "Os", 29 => "Jl", 30 => "Am",
+    31 => "Ob", 32 => "Jn", 33 => "Mq", 34 => "Na", 35 => "Hc",
+    36 => "Sf", 37 => "Ag", 38 => "Zc", 39 => "Ml",
+    40 => "Mt", 41 => "Mc", 42 => "Lc", 43 => "Jo",
+    44 => "At", 45 => "Rm", 46 => "1Co", 47 => "2Co", 48 => "Gl",
+    49 => "Ef", 50 => "Fp", 51 => "Cl", 52 => "1Ts", 53 => "2Ts",
+    54 => "1Tm", 55 => "2Tm", 56 => "Tt", 57 => "Fm",
+    58 => "Hb", 59 => "Tg", 60 => "1Pe", 61 => "2Pe",
+    62 => "1Jo", 63 => "2Jo", 64 => "3Jo", 65 => "Jd",
+    66 => "Ap"
+);
+  $day_number = date("w");
+  $month_number = date("m");
+  $year = date("Y");
+  $bookOfTheDay = 1;
+  $chaptersOfTheDay = array('1','2','3');
+  //Loop by books
 
+  // Inicializa a sessão cURL
+    $curl = curl_init();
+
+    // Configura a URL do site que você deseja obter o conteúdo
+    curl_setopt($curl, CURLOPT_URL, 'https://www.bibliaonline.com.br/acf/'.$books[$bookOfTheDay].'/'.$chaptersOfTheDay[0]);
+    $url = 'https://www.bibliaonline.com.br/nvi/'.$books[$bookOfTheDay].'/'.$chaptersOfTheDay[0];
+    echo $url;
+    // Configura cURL para retornar o conteúdo em vez de imprimi-lo na tela
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+    // Executa a requisição cURL
+    $result = curl_exec($curl);
+
+    // Fecha a sessão cURL
+    curl_close($curl);
+    echo $result;
+    // Imprime o conteúdo do site
+    echo $result1 = strip_tags($result);
+  
+  echo  ' <div class="example-1 card" >';
+  echo '<div class="date">
+          <span class="day">'.$day_number.'</span>
+          <span class="month">'.$month_number.'</span>
+          <span class="year">'.$year.'</span>
+        </div>';
+   echo '<div class="data">';
+   echo '<div class="content">';
+   echo '<span class="author">Autor : '.getAuthor($bookOfTheDay).' </span>';
+   echo '<h1 class="title"><a href="https://www.bibliaonline.com.br/acf/'.$books[$bookOfTheDay].'/'.$chaptersOfTheDay[0].'">'.$books[$bookOfTheDay] .' - '.  getDays($chaptersOfTheDay);
+   echo '/a></h1>';
+   echo '<p class="text">
+   
+   Gênesis 1:1-4</p> '.$result1.'
+   
+          </div>
+        </div>
+      </div>
+    </div>'    ; 
+}
+
+function getDays($chaptersOfTheDay){
+  foreach($chaptersOfTheDay as $chaptersOfTheDay) { 
+    $string = ", ".$chaptersOfTheDay;
+  }
+  return $string;
+}
+function getAuthor($book_number) {
+  switch ($book_number) {
+    case 1:
+      return "Moses";
+    case 2:
+      return "Moses";
+    case 3:
+      return "Moses";
+    case 4:
+      return "Moses";
+    case 5:
+      return "Moses";
+    case 6:
+      return "Moses";
+    case 7:
+      return "Moses";
+    case 8:
+      return "Moses";
+    case 9:
+      return "Moses";
+    case 10:
+      return "Moses";
+    case 11:
+      return "Moses";
+    case 12:
+      return "Moses";
+    case 13:
+      return "Moses";
+    case 14:
+      return "Moses";
+    case 15:
+      return "Moses";
+    case 16:
+      return "Moses";
+    case 17:
+      return "Moses";
+    case 18:
+      return "Moses";
+    case 19:
+      return "Moses";
+    case 20:
+      return "Moses";
+    case 21:
+      return "Moses";
+    case 22:
+      return "Moses";
+    case 23:
+      return "Moses";
+    case 24:
+      return "Moses";
+    case 25:
+      return "Moses";
+    case 26:
+      return "Moses";
+    case 27:
+      return "Moses";
+    case 28:
+      return "Moses";
+    case 29:
+      return "Moses";
+    case 30:
+      return "Moses";
+    case 31:
+      return "Moses";
+    case 32:
+      return "Moses";
+    case 33:
+      return "Moses";
+    case 34:
+      return "Moses";
+    case 35:
+      return "Moses";
+    case 36:
+      return "Moses";
+    case 37:
+      return "Moses";
+    case 38:
+      return "Moses";
+    case 39:
+      return "Moses";
+    case 40:
+      return "Moses";
+    case 41:
+      return "Jeremiah";
+    case 42:
+      return "Jeremiah";
+    case 43:
+      return "Jeremiah";
+    case 44:
+      return "Jeremiah";
+    case 45:
+      return "Jeremiah";
+    case 46:
+      return "Jeremiah";
+    case 47:
+      return "Jeremiah";
+    case 48:
+      return "Jeremiah";
+    case 49:
+      return "Jeremiah";
+    case 50:
+      return "Jeremiah";
+    case 51:
+      return "Jeremiah";
+    case 52:
+      return "Jeremiah";
+    case 53:
+      return "Jeremiah";
+    case 54:
+      return "Jeremiah";
+    case 55:
+      return "Jeremiah";
+    case 56:
+      return "Jeremiah";
+    case 57:
+      return "Jeremiah";
+    case 58:
+      return "Jeremiah";
+    case 59:
+      return "Jeremiah";
+    case 60:
+    }
+}
 function getDay($day){
  // echo $day;
 switch($day){
