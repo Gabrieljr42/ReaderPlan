@@ -352,7 +352,6 @@ h1 {
 </div>
 <div class="row">
  <?php $day = getdate()['yday'];
- $day = 7;
  automateGetDay();
 //  getDay($day);
  ?>
@@ -364,50 +363,68 @@ h1 {
 
 <?php
 function automateGetDay(){
-  $books = array(
-    1 => "Gn", 2 => "Êx", 3 => "Lv", 4 => "Nm", 5 => "Dt",
-    6 => "Js", 7 => "Jz", 8 => "Rt", 9 => "1Sm", 10 => "2Sm",
-    11 => "1Rs", 12 => "2Rs", 13 => "1Cr", 14 => "2Cr", 15 => "Ed",
-    16 => "Ne", 17 => "Et", 18 => "Jó", 19 => "Sl", 20 => "Pv",
-    21 => "Ec", 22 => "Ct", 23 => "Is", 24 => "Jr", 25 => "Lm",
-    26 => "Ez", 27 => "Dn", 28 => "Os", 29 => "Jl", 30 => "Am",
-    31 => "Ob", 32 => "Jn", 33 => "Mq", 34 => "Na", 35 => "Hc",
-    36 => "Sf", 37 => "Ag", 38 => "Zc", 39 => "Ml",
-    40 => "Mt", 41 => "Mc", 42 => "Lc", 43 => "Jo",
-    44 => "At", 45 => "Rm", 46 => "1Co", 47 => "2Co", 48 => "Gl",
-    49 => "Ef", 50 => "Fp", 51 => "Cl", 52 => "1Ts", 53 => "2Ts",
-    54 => "1Tm", 55 => "2Tm", 56 => "Tt", 57 => "Fm",
-    58 => "Hb", 59 => "Tg", 60 => "1Pe", 61 => "2Pe",
-    62 => "1Jo", 63 => "2Jo", 64 => "3Jo", 65 => "Jd",
-    66 => "Ap"
-);
+  setlocale(LC_TIME, 'pt_BR');
   $day_number = date("w");
-  $month_number = date("m");
+  
+  
+  $month_number = strftime('%B');
   $year = date("Y");
-  $bookOfTheDay = 1;
+  $bookOfTheDay = 'gn';
   $chaptersOfTheDay = array('1','2','3');
   //Loop by books
-
+  $days = [
+    1 => [ 
+        0=> ['bookOfTheDay' => 'gn', 'chaptersOfTheDay' => array('1','2')],	
+        1 => [ 'bookOfTheDay' => 'lc', 'chaptersOfTheDay' => array('1')]
+      ],
+  ];
+  // echo $day['1'][0]['bookOfTheDay'];
   // Inicializa a sessão cURL
     $curl = curl_init();
+    $api_key = 'e84e7f810e5b5aeaf2ea03e878efcb61';
 
-    // Configura a URL do site que você deseja obter o conteúdo
-    curl_setopt($curl, CURLOPT_URL, 'https://www.bibliaonline.com.br/acf/'.$books[$bookOfTheDay].'/'.$chaptersOfTheDay[0]);
-    $url = 'https://www.bibliaonline.com.br/nvi/'.$books[$bookOfTheDay].'/'.$chaptersOfTheDay[0];
-    echo $url;
-    // Configura cURL para retornar o conteúdo em vez de imprimi-lo na tela
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    $token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IlR1ZSBKYW4gMDMgMjAyMyAyMzoxMzoxNCBHTVQrMDAwMC5nYWJyaWVsanVuaW9yNDI1NjZAZ21haWwuY29tIiwiaWF0IjoxNjcyNzg3NTk0fQ.a9RoOsm08VpJ7F2svfAmc7kZX2TxTst0Y0cIRJv-yx0";
+    foreach($days as $day){
+      foreach($day as $book){
+        $bookOfTheDay = $book['bookOfTheDay'];
+        $chaptersOfTheDay = $book['chaptersOfTheDay'];
 
-    // Executa a requisição cURL
-    $result = curl_exec($curl);
-
-    // Fecha a sessão cURL
-    curl_close($curl);
-    echo $result;
-    // Imprime o conteúdo do site
-    echo $result1 = strip_tags($result);
-  
+      // A URL do endpoint do API da Biblia.com para buscar versiculos
+      $url = "https://www.abibliadigital.com.br/api/verses/nvi/$bookOfTheDay/".$chaptersOfTheDay[0];
+      
+      // Inicializa o curl
+      $ch = curl_init();
+      
+      // Configura as opcoes do curl
+      curl_setopt($ch, CURLOPT_URL, $url);
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+      curl_setopt($ch, CURLOPT_HTTPHEADER, [
+        "Authorization: Bearer $token",
+    ]);
+      // Executa a solicitacao
+      $response = curl_exec($ch);
+      
+      // Verifica se houve algum erro
+      if (curl_errno($ch)) {
+          die('Erro ao executar a solicitacao: ' . curl_error($ch));
+      }
+      
+      // Fecha a conexao curl
+      curl_close($ch);
+      
+      // Decodifica a resposta do API
+      $book_data = json_decode($response,true);
+      
+      // Imprime o texto do versiculo
+      //print_r($book_data);
+      
+      printoToUser($day_number, $month_number, $year, $book_data,$bookOfTheDay,$chaptersOfTheDay);
+    }
+  }
+}
+function printoToUser($day_number, $month_number, $year, $book_data,$bookOfTheDay,$chaptersOfTheDay){
   echo  ' <div class="example-1 card" >';
+  echo '<div class="wrapper" style="background: url(https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/cover no-repeat;">';
   echo '<div class="date">
           <span class="day">'.$day_number.'</span>
           <span class="month">'.$month_number.'</span>
@@ -415,148 +432,37 @@ function automateGetDay(){
         </div>';
    echo '<div class="data">';
    echo '<div class="content">';
-   echo '<span class="author">Autor : '.getAuthor($bookOfTheDay).' </span>';
-   echo '<h1 class="title"><a href="https://www.bibliaonline.com.br/acf/'.$books[$bookOfTheDay].'/'.$chaptersOfTheDay[0].'">'.$books[$bookOfTheDay] .' - '.  getDays($chaptersOfTheDay);
-   echo '/a></h1>';
+   echo '<span class="author">Autor : '.$book_data['book']['author'].' </span>';
+   echo '<h1 class="title"><a href="https://www.bibliaonline.com.br/acf/'.$bookOfTheDay.'/'.$chaptersOfTheDay[0].'">'.strtoupper($bookOfTheDay) .' - '.  getDays($chaptersOfTheDay);
+   echo '</a></h1>';
    echo '<p class="text">
-   
-   Gênesis 1:1-4</p> '.$result1.'
-   
+          '.firstChapter($book_data).'
+            </p>
           </div>
         </div>
       </div>
     </div>'    ; 
 }
-
-function getDays($chaptersOfTheDay){
-  foreach($chaptersOfTheDay as $chaptersOfTheDay) { 
-    $string = ", ".$chaptersOfTheDay;
+function firstChapter($book_data){
+  $string = "";
+  $cont = 0;
+  foreach($book_data['verses'] as $verse) { 
+    $cont++;
+    if($cont == 7 ) break;
+    $string = $string . $verse['number'] . " - " . $verse['text'] . " ";
   }
   return $string;
 }
-function getAuthor($book_number) {
-  switch ($book_number) {
-    case 1:
-      return "Moses";
-    case 2:
-      return "Moses";
-    case 3:
-      return "Moses";
-    case 4:
-      return "Moses";
-    case 5:
-      return "Moses";
-    case 6:
-      return "Moses";
-    case 7:
-      return "Moses";
-    case 8:
-      return "Moses";
-    case 9:
-      return "Moses";
-    case 10:
-      return "Moses";
-    case 11:
-      return "Moses";
-    case 12:
-      return "Moses";
-    case 13:
-      return "Moses";
-    case 14:
-      return "Moses";
-    case 15:
-      return "Moses";
-    case 16:
-      return "Moses";
-    case 17:
-      return "Moses";
-    case 18:
-      return "Moses";
-    case 19:
-      return "Moses";
-    case 20:
-      return "Moses";
-    case 21:
-      return "Moses";
-    case 22:
-      return "Moses";
-    case 23:
-      return "Moses";
-    case 24:
-      return "Moses";
-    case 25:
-      return "Moses";
-    case 26:
-      return "Moses";
-    case 27:
-      return "Moses";
-    case 28:
-      return "Moses";
-    case 29:
-      return "Moses";
-    case 30:
-      return "Moses";
-    case 31:
-      return "Moses";
-    case 32:
-      return "Moses";
-    case 33:
-      return "Moses";
-    case 34:
-      return "Moses";
-    case 35:
-      return "Moses";
-    case 36:
-      return "Moses";
-    case 37:
-      return "Moses";
-    case 38:
-      return "Moses";
-    case 39:
-      return "Moses";
-    case 40:
-      return "Moses";
-    case 41:
-      return "Jeremiah";
-    case 42:
-      return "Jeremiah";
-    case 43:
-      return "Jeremiah";
-    case 44:
-      return "Jeremiah";
-    case 45:
-      return "Jeremiah";
-    case 46:
-      return "Jeremiah";
-    case 47:
-      return "Jeremiah";
-    case 48:
-      return "Jeremiah";
-    case 49:
-      return "Jeremiah";
-    case 50:
-      return "Jeremiah";
-    case 51:
-      return "Jeremiah";
-    case 52:
-      return "Jeremiah";
-    case 53:
-      return "Jeremiah";
-    case 54:
-      return "Jeremiah";
-    case 55:
-      return "Jeremiah";
-    case 56:
-      return "Jeremiah";
-    case 57:
-      return "Jeremiah";
-    case 58:
-      return "Jeremiah";
-    case 59:
-      return "Jeremiah";
-    case 60:
-    }
+
+function getDays($chaptersOfTheDay){
+  $string = "";
+  foreach($chaptersOfTheDay as $chaptersOfTheDay) {
+    if( $string == "") $string = $chaptersOfTheDay;
+    else $string .= ", ".$chaptersOfTheDay;
+  }
+  return $string;
 }
+
 function getDay($day){
  // echo $day;
 switch($day){
