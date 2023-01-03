@@ -365,7 +365,7 @@ h1 {
 function automateGetDay(){
    error_reporting(0);
   setlocale(LC_TIME, 'pt_BR');
-  $day_number = date("w");
+  $day_number = 1 + date("w");
   
   
   $month_number = strftime('%B');
