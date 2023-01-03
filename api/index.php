@@ -363,6 +363,7 @@ h1 {
 
 <?php
 function automateGetDay(){
+   error_reporting(0);
   setlocale(LC_TIME, 'pt_BR');
   $day_number = date("w");
   
