@@ -423,9 +423,20 @@ function automateGetDay(){
     }
   }
 }
+function getImage($bookOfTheDay){
+  switch($bookOfTheDay){
+    case 'gn':
+      return 'https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
+    break;
+    case 'lc':
+      return 'https://images.unsplash.com/photo-1492052722242-2554d0e99e3a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';
+    break;
+    
+  }
+}
 function printoToUser($day_number, $month_number, $year, $book_data,$bookOfTheDay,$chaptersOfTheDay){
   echo  ' <div class="example-1 card" >';
-  echo '<div class="wrapper" style="background: url(https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/cover no-repeat;">';
+  echo '<div class="wrapper" style="background: url('.getImage($bookOfTheDay).') center/cover no-repeat;">';
   echo '<div class="date">
           <span class="day">'.$day_number.'</span>
           <span class="month">'.$month_number.'</span>
