@@ -526,18 +526,8 @@ a {
 
 <?php
 function automateGetDay($today){
-   error_reporting(0);
-  setlocale(LC_TIME, 'pt_BR');
-  $day_number = 1 + date("w");
-  
-  
-  $month_number = strftime('%B');
-  $year = date("Y");
-  $bookOfTheDay = 'gn';
-  $chaptersOfTheDay = array('1','2','3');
-  //Loop by books
-  $today = 33;
-  $days = array();
+  //  error_reporting(0);
+
 
 $schedule = "
 Janeiro
@@ -980,9 +970,11 @@ $schedule_lines = explode("\n", $schedule);
 
 foreach ($schedule_lines as $schedule_line) {
     $new_month = diffMonth($schedule_line);
+
     if($new_month != null){
         $month = $new_month;
     }
+
     if (preg_match('/^([0-9]+) ([a-zA-Z]+)( [0-9a-zA-Z\-\, ]+)/', $schedule_line, $matches)) {
         
         $chapters = array();
@@ -1020,20 +1012,41 @@ foreach ($schedule_lines as $schedule_line) {
         $days[$month . $day] = $books_of_the_day;
     }
 }
-echo "<pre>"; 
-print_r($days);
 
-  $days = [
+$oneMonthAgo = date('Y-m-d', strtotime("-1 month"));
+
+$day_number = 1 + date('d', strtotime("-1 month"));;
+
+  
+$month_number = strftime('%B');
+$year = date("Y");
+
+//Loop by books
+$today = 33;
+
+  $today = 1;
+  echo "<pre>";
+  //Get the day of the month
+  $month = date('F');
+  
+  $monthC = diffMonthEnglish($month_number);
+  $thirtyOneDaysAgoDay = date('d', strtotime("-31 days"));
+
+  $oneMonthAgo = date('F', strtotime("-1 month"));
+  
+  // print_r($days);
+  $DiaProvisorios = [
     1 => [ 
-        0=> ['bookOfTheDay' => 'gn', 'chaptersOfTheDay' => array('1','2')],	
+        0=> ['bookOfTheDay' => 'gn', 'chaptersOfTheDay' => array('1','2','3')],	
         1 => [ 'bookOfTheDay' => 'lc', 'chaptersOfTheDay' => array('1')]
       ],
     2 => [ 
-        0=> ['bookOfTheDay' => 'gn', 'chaptersOfTheDay' => array('3','4')],	
+        0=> ['bookOfTheDay' => 'gn', 'chaptersOfTheDay' => array('4','5','6')],	
         1 => [ 'bookOfTheDay' => 'lc', 'chaptersOfTheDay' => array('2')]
     ]
   ];
-  $day = $days[$today-31];
+  $day = $DiaProvisorios[1];
+  // $day = $days[$monthC . $today];
   // echo $day['1'][0]['bookOfTheDay'];
   // Inicializa a sessão cURL
     $curl = curl_init();
@@ -1074,40 +1087,70 @@ print_r($days);
       // Imprime o texto do versiculo
       //print_r($book_data);
       
-      printoToUser($day_number, $month_number, $year, $book_data,$bookOfTheDay,$chaptersOfTheDay);
+      printoToUser($thirtyOneDaysAgoDay, $month_number, $year, $book_data,$bookOfTheDay,$chaptersOfTheDay);
     }
   
 }
 
 function diffMonth($line){
-  switch(){
-    case "Janeiro":
-      return "Jn";
-    case "Fevereiro":
-      return "Fv";
-    case "Março":
-      return "Mc"; 
-    case "Abril":
-      return "Ab";
-    case "Maio":
-      return "Mi";
-    case "Junho":
-      return "Jh";
-    case "Julho":
-      return "Jl";
-    case "Agosto":
-      return "Ag";
-    case "Setemebro":
-      return "St"; 
-    case "Outubro":
-      return "Ot";
-    case "Novembro":
-      return "Nv";
-    case "Dezembro":
-      return "Dz";   
+  $line = trim($line);
+ if($line === "Janeiro"){
+   return 'Jn';
+ }else if($line === "Fevereiro"){
+   return 'Fv';
+  }else if($line === "Março"){
+    return 'Mr';
+  }else if($line === "Abril"){
+    return 'Ab';
+  }else if($line === "Maio"){
+    return 'Mz';
+  }else if($line === "Junho"){
+    return 'Jn';
+  }else if($line === "Julho"){
+    return 'Jl';
+  }else if($line === "Agosto"){
+    return 'Ag';
+  }else if($line === "Setembro"){
+    return 'St';
+  }else if($line === "Outubro"){
+    return 'Ot';
+  }else if($line === "Novembro"){
+    return 'Nv';
+  }else if($line === "Dezembro"){
+    return 'Dz';
   }
-  return null;
+
 }
+function diffMonthEnglish($line) {
+  $line = trim($line);
+  if($line === "January"){
+    return 'Jn';
+  }else if($line === "February"){
+    return 'Fv';
+  }else if($line === "March"){
+    return 'Mr';
+  }else if($line === "April"){
+    return 'Ap';
+  }else if($line === "May"){
+    return 'Mz';
+  }else if($line === "June"){
+    return 'Jn';
+  }else if($line === "July"){
+    return 'Jl';
+  }else if($line === "August"){
+    return 'Ag';
+  }else if($line === "September"){
+    return 'St';
+  }else if($line === "October"){
+    return 'Ot';
+  }else if($line === "November"){
+    return 'No';
+  }else if($line === "December"){
+    return 'De';
+  }
+}
+
+
 function getImage($bookOfTheDay){
   switch($bookOfTheDay){
     case 'gn':
