@@ -1,9 +1,9 @@
 {
-    "name": "digitalocean-apps/ReaderPlan",
+    "name": "digitalocean-apps/sample-php",
     "description": "Plan for Reading the bible",
     "type": "project",
     "require": {
-        "alrik11es/cowsayphp": "^1.2"
+        "php": "^8.0.0"
     },
     "authors": [
         {
