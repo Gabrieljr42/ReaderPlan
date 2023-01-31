@@ -1,5 +1,14 @@
 {
-  "require": {
-    "php": "^8.0.0"
-  }
+    "name": "digitalocean-apps/ReaderPlan",
+    "description": "Plan for Reading the bible",
+    "type": "project",
+    "require": {
+        "alrik11es/cowsayphp": "^1.2"
+    },
+    "authors": [
+        {
+            "name": "Jonh",
+            "email": "gabrieljunior42566@gmail.com"
+        }
+    ]
 }
