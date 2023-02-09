@@ -535,13 +535,13 @@ a {
   Ele sabe exatamente o que devemos escolher e qual é a melhor opção. Na qual não iremos sofrer.</p>
 
   <p> Como saber qual é a  decisão correta a se tomar ?</p>
-  A Bíblia ensina que compreender a vontade de Deus é resultado do ajustamento constante de nosso pensamento e conduta à palavra de Deus ao longo de toda a vida. 
-  1) ORAR
+  <p>A Bíblia ensina que compreender a vontade de Deus é resultado do ajustamento constante de nosso pensamento e conduta à palavra de Deus ao longo de toda a vida.</p> 
+  <p>1) ORAR</p>
   Precisamos dizer todos os dias a Deus que queremos viver tudo que Ele tem pra nós. 
   Que os sonhos Dele sejam os nossos sonhos!!
-  2) CONHECER SUA PALAVRA 
-  É por meio da palavra que Deus fala conosco. Realmente é um desafio lermos todos os dias, mas fica aí uma frase de John Wesley Oh, comece! Determine uma parte do dia para as práticas devocionais em  particular. Gostando ou não, leia e ore diariamente. Essas práticas são para sua vida ou você será leviano todos os dias 
-  Leviano = Que julga por antecipação ou sem refletir sobre o que diz. Que não expressa seriedade nem sensatez; irresponsável. </p>
+  <p>2) CONHECER SUA PALAVRA </p>
+  <p>É por meio da palavra que Deus fala conosco. Realmente é um desafio lermos todos os dias, mas fica aí uma frase de John Wesley : <p>"Oh, comece! Determine uma parte do dia para as práticas devocionais em  particular. Gostando ou não, leia e ore diariamente. Essas práticas são para sua vida ou você será leviano todos os dias "</p>
+  <p>Leviano = Que julga por antecipação ou sem refletir sobre o que diz. Que não expressa seriedade nem sensatez; irresponsável. </p>
 
   <p>Se você compreende que o que Deus tem para nós é o melhor faça essa oração:
 
