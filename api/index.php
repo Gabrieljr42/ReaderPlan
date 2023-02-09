@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/1179/1179267.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <style>
         @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
@@ -50,7 +51,7 @@ h1 {
   padding: 0 1.7rem;
   width: 48%;
   margin-bottom: 2rem;
-  min-width: 350px;
+  min-width: 388px;
 }
 
 .card .menu-content {
@@ -499,13 +500,14 @@ a {
 
     </style>
       <header class="header">
-    <a href="" class="logo">ReaderPlan</a>
+      <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/1179/1179267.png" type="image/x-icon">
+    <a href="" class="logo">Clareza</a>
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
     <ul class="menu">
       <li><a href="#work">Leitura da Biblia</a></li>
-      <li><a href="#about">Leitura da Biblia Kids</a></li>
-      <li><a href="#careers">Devocionais</a></li>
+      <!-- <li><a href="#about">Leitura da Biblia Kids</a></li> -->
+      <li><a href="#devocional">Devocionais</a></li>
     </ul>
   </header>
 </head>
@@ -516,9 +518,41 @@ a {
 <div class="row">
  <?php $day = getdate()['yday'];
  automateGetDay($day);
-//  getDay($day);
+
  ?>
-  
+ <!-- /Div with double the width -->
+  <div class="card example-1">
+  <h1 style="text-align: center; font-size: 36px; margin-bottom: 20px;">Devocional do dia</h1>
+  <div style="width: 100%; padding: 20px; background-color: #034378; text-align: center; font-family: sans-serif; font-size: 18px; line-height: 1.5; color: white;">
+  <p>Paz, irmãos queridos! </p>
+
+  <p>Se vocês estiverem dispostos a obedecer, comerão os melhores frutos desta terra;
+  Isaías 1:19</p>
+
+  <p>Em nossa vida precisamos, várias vezes, tomar decisões importantes. <p>Que curso fazer ?</p> <p>Qual universidade ?</p> <p>Devo me casar com essa pessoa ?</p> <p>Devo morar em que lugar ?</p> <p>Onde devo trabalhar ?</p> entre tantas outras..
+  A medida que vamos ficando mais velhos essas perguntas passam a ser feitas com maior frequência ( tanto por nós quanto por outras pessoas). </p>
+  <p>É INCRÍVEL saber que Deus já escreveu toda nossa história( Salmos 139:16 * Os teus olhos viram o meu embrião; todos os dias determinados para mim foram escritos no teu livro antes de qualquer deles existir.* )
+  Ele sabe exatamente o que devemos escolher e qual é a melhor opção. Na qual não iremos sofrer.</p>
+
+  <p> Como saber qual é a  decisão correta a se tomar ?</p>
+  A Bíblia ensina que compreender a vontade de Deus é resultado do ajustamento constante de nosso pensamento e conduta à palavra de Deus ao longo de toda a vida. 
+  1) ORAR
+  Precisamos dizer todos os dias a Deus que queremos viver tudo que Ele tem pra nós. 
+  Que os sonhos Dele sejam os nossos sonhos!!
+  2) CONHECER SUA PALAVRA 
+  É por meio da palavra que Deus fala conosco. Realmente é um desafio lermos todos os dias, mas fica aí uma frase de John Wesley Oh, comece! Determine uma parte do dia para as práticas devocionais em  particular. Gostando ou não, leia e ore diariamente. Essas práticas são para sua vida ou você será leviano todos os dias 
+  Leviano = Que julga por antecipação ou sem refletir sobre o que diz. Que não expressa seriedade nem sensatez; irresponsável. </p>
+
+  <p>Se você compreende que o que Deus tem para nós é o melhor faça essa oração:
+
+  Senhor Jesus,muito obrigada pelo seu amor conosco! Pai nos sujeitamos a sua vontade,  que seja feita a tua vontade nas nossas vidas.
+  Se nós algum dia tomamos alguma decisão que não foi de acordo com o seu querer, Pai, pedimos que o senhor nos traga de volta para a sua vontade, recalcule a rota. Sabemos que assim seremos felizes.   Em nome de Jesus amém!</p>
+
+  <p>Ps: quando decidimos escolher viver as coisas de Deus para nós não há ninguém que possa impedir isso. Deus tira todas as pessoas que entram no seu caminho para atrapalhar. 
+  Fiquem com Jesus.
+  Amo vcs</p>
+</div>
+  </div>
 </div>
 </body>
 </html>
@@ -526,7 +560,7 @@ a {
 
 <?php
 function automateGetDay($today){
-  //  error_reporting(0);
+  error_reporting(0);
 
 
 $schedule = "
@@ -1025,20 +1059,20 @@ $year = date("Y");
 $today = 33;
 
   $today = 1;
-  echo "<pre>";
+
   //Get the day of the month
   $month = date('F');
   
   $monthC = diffMonthEnglish($month_number);
-  $thirtyOneDaysAgoDay = date('d', strtotime("-31 days"));
+  $thirtyOneDaysAgoDay = date('d', strtotime("-32 days"));
 
   $oneMonthAgo = date('F', strtotime("-1 month"));
   
   // print_r($days);
   $DiaProvisorios = [
     1 => [ 
-        0=> ['bookOfTheDay' => 'gn', 'chaptersOfTheDay' => array('1','2','3')],	
-        1 => [ 'bookOfTheDay' => 'lc', 'chaptersOfTheDay' => array('1')]
+        0=> ['bookOfTheDay' => 'gn', 'chaptersOfTheDay' => array('24')],	
+        1 => [ 'bookOfTheDay' => 'mt', 'chaptersOfTheDay' => array('9')]
       ],
     2 => [ 
         0=> ['bookOfTheDay' => 'gn', 'chaptersOfTheDay' => array('4','5','6')],	
@@ -1089,6 +1123,8 @@ $today = 33;
       
       printoToUser($thirtyOneDaysAgoDay, $month_number, $year, $book_data,$bookOfTheDay,$chaptersOfTheDay);
     }
+
+    
   
 }
 
@@ -1156,7 +1192,7 @@ function getImage($bookOfTheDay){
     case 'gn':
       return 'https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
     break;
-    case 'lc':
+    case 'mt':
       return 'https://images.unsplash.com/photo-1492052722242-2554d0e99e3a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';
     break;
     
