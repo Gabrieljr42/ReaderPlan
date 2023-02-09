@@ -1,6 +1,6 @@
 {
     "functions": {
-      "Leitura*.php": {
+      "api/Lelitura*.php": {
         "runtime": "vercel-php@0.5.2"
       }
     }
