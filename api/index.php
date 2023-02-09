@@ -551,6 +551,8 @@ a {
   <p>Ps: quando decidimos escolher viver as coisas de Deus para nós não há ninguém que possa impedir isso. Deus tira todas as pessoas que entram no seu caminho para atrapalhar. 
   Fiquem com Jesus.
   Amo vcs</p>
+    
+    <p>Sofia Oliveira Queiroz</p>
 </div>
   </div>
 </div>
