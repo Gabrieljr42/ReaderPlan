@@ -1066,7 +1066,7 @@ $today = 33;
   $month = date('F');
   
   $monthC = diffMonthEnglish($month_number);
-  $thirtyOneDaysAgoDay = date('d', strtotime("-32 days"));
+  $thirtyOneDaysAgoDay = date('d');
 
   $oneMonthAgo = date('F', strtotime("-1 month"));
   
