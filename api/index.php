@@ -1035,6 +1035,7 @@ foreach ($schedule_lines as $schedule_line) {
         $days[$month . $day] = $books_of_the_day;
     }
 }
+date_default_timezone_set('America/Sao_Paulo');
 
 $oneMonthAgo = date('Y-m-d', strtotime("-1 month"));
 
