@@ -524,35 +524,22 @@ a {
   <div class="card example-1">
   <h1 style="text-align: center; font-size: 36px; margin-bottom: 20px;">Devocional do dia</h1>
   <div style="width: 100%; padding: 20px; background-color: #034378; text-align: center; font-family: sans-serif; font-size: 18px; line-height: 1.5; color: white;">
-  <p>Paz, irmãos queridos! </p>
+    <p>Lucas 15:11-32</p>
+      <p>O filho pródigo</p>
 
-  <p>Se vocês estiverem dispostos a obedecer, comerão os melhores frutos desta terra;
-  Isaías 1:19</p>
+<p>Há duas visões nessa parábola que eu gostaria de comentar: a do filho que se foi e a do que ficou.</p>
 
-  <p>Em nossa vida precisamos, várias vezes, tomar decisões importantes. <p>Que curso fazer ?</p> <p>Qual universidade ?</p> <p>Devo me casar com essa pessoa ?</p> <p>Devo morar em que lugar ?</p> <p>Onde devo trabalhar ?</p> entre tantas outras..
-  A medida que vamos ficando mais velhos essas perguntas passam a ser feitas com maior frequência ( tanto por nós quanto por outras pessoas). </p>
-  <p>É INCRÍVEL saber que Deus já escreveu toda nossa história( Salmos 139:16 * Os teus olhos viram o meu embrião; todos os dias determinados para mim foram escritos no teu livro antes de qualquer deles existir.* )
-  Ele sabe exatamente o que devemos escolher e qual é a melhor opção. Na qual não iremos sofrer.</p>
+<p>Primeiro, a visão do filho que ficou:</p> Às vezes nós nos acostumamos com os presentes de Deus, a ponto de não enxergarmos mais suas bençãos em nosso dia-a-dia. Uma roupa nova, um carro novo, um fogão novo; tudo isso são presentes do Senhor para nós! </p>
+ <p>As vezes estamos sem dinheiro para comprar algo e logo aquilo aparece como mágica em nossas mãos. Não, não é sorte! É Deus sendo seu Pai e te presenteando. Porque como foi dito na parábola tudo que é de Deus é seu! Então pare de olhar para o milagre que Deus está fazendo na vida do irmão que acabou de se converter, de voltar para Jesus ou de aceitá-lo verdadeiramente, porque é a primeira vez de muito tempo que ele recebe algo de Deus; logo, a benção será realmente mais fácil de se notar!</p>
+ <p>Pare de olhar para as novas bençãos dele e veja todas as suas, que você ganha todos os dias: sua saúde, sua casa, sua família…tudo o que tens, tudo o que Deus não tem te deixado faltar. O Senhor cuida de você a cada mínimo detalhe porque você já é dEle. Mas esse irmão que voltou perdeu tudo e precisa de tudo novo. Você já tem tudo, é só parar para olhar..</p>
 
-  <p> Como saber qual é a  decisão correta a se tomar ?</p>
-  <p>A Bíblia ensina que compreender a vontade de Deus é resultado do ajustamento constante de nosso pensamento e conduta à palavra de Deus ao longo de toda a vida.</p> 
-  <p>1) ORAR</p>
-  Precisamos dizer todos os dias a Deus que queremos viver tudo que Ele tem pra nós. 
-  Que os sonhos Dele sejam os nossos sonhos!!
-  <p>2) CONHECER SUA PALAVRA </p>
-  <p>É por meio da palavra que Deus fala conosco. Realmente é um desafio lermos todos os dias, mas fica aí uma frase de John Wesley : <p>"Oh, comece! Determine uma parte do dia para as práticas devocionais em  particular. Gostando ou não, leia e ore diariamente. Essas práticas são para sua vida ou você será leviano todos os dias "</p>
-  <p>Leviano = Que julga por antecipação ou sem refletir sobre o que diz. Que não expressa seriedade nem sensatez; irresponsável. </p>
+<p>Em seguida, temos temos a visão do filho que foi embora:</p>
+<p>Deus perdoa, se você se foi, se você se afastou e trocou tudo que Ele te deu, todos os planos e todas as bençãos pelo pecado, mas se arrepende de coração, VOLTE!</p>
+<p>Volte porque o mundo te dá migalhas mas você sabe que Deus até aos servos dá o pão para comerem! Você sabe que Ele perdoa os arrependidos de coração.</p>
+<p>Enquanto em pecado nós nos afastamos de Deus pois Ele é justo e não habita onde habitam as trevas, mas quando nos arrependemos e pedimos perdão genuíno você abre espaço para o amor de Deus e os céus fazem festa com seu retorno.</p>
+<p>E se você não se acha digno de voltar, eu lhe pergunto: quem é? Venha ao Pai! Ele deixa as 99 ovelhas para te buscar, mas é você que decide se irá retornar com Ele pra o rebanho…</p>
 
-  <p>Se você compreende que o que Deus tem para nós é o melhor faça essa oração:
-
-  Senhor Jesus,muito obrigada pelo seu amor conosco! Pai nos sujeitamos a sua vontade,  que seja feita a tua vontade nas nossas vidas.
-  Se nós algum dia tomamos alguma decisão que não foi de acordo com o seu querer, Pai, pedimos que o senhor nos traga de volta para a sua vontade, recalcule a rota. Sabemos que assim seremos felizes.   Em nome de Jesus amém!</p>
-
-  <p>Ps: quando decidimos escolher viver as coisas de Deus para nós não há ninguém que possa impedir isso. Deus tira todas as pessoas que entram no seu caminho para atrapalhar. 
-  Fiquem com Jesus.
-  Amo vcs</p>
-    
-    <p>Sofia Oliveira Queiroz</p>
+<p>Victorya Neves Mattos Silva</p>
 </div>
   </div>
 </div>
@@ -1077,11 +1064,15 @@ $today = 33;
         1 => [ 'bookOfTheDay' => 'mt', 'chaptersOfTheDay' => array('9')]
       ],
     2 => [ 
-        0=> ['bookOfTheDay' => 'gn', 'chaptersOfTheDay' => array('4','5','6')],	
-        1 => [ 'bookOfTheDay' => 'lc', 'chaptersOfTheDay' => array('2')]
+        0=> ['bookOfTheDay' => 'gn', 'chaptersOfTheDay' => array('25','26')],	
+        1 => [ 'bookOfTheDay' => 'mt', 'chaptersOfTheDay' => array('10')]
     ]
   ];
+
   $day = $DiaProvisorios[1];
+  if($thirtyOneDaysAgoDay ==  10){
+       $day = $DiaProvisorios[2];
+  }
   // $day = $days[$monthC . $today];
   // echo $day['1'][0]['bookOfTheDay'];
   // Inicializa a sessão cURL
