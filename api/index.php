@@ -524,22 +524,17 @@ a {
   <div class="card example-1">
   <h1 style="text-align: center; font-size: 36px; margin-bottom: 20px;">Devocional do dia</h1>
   <div style="width: 100%; padding: 20px; background-color: #034378; text-align: center; font-family: sans-serif; font-size: 18px; line-height: 1.5; color: white;">
-    <p>Lucas 15:11-32</p>
-      <p>O filho pródigo</p>
+  <p>Versículo base : Lucas 5-5</p>
 
-<p>Há duas visões nessa parábola que eu gostaria de comentar: a do filho que se foi e a do que ficou.</p>
+<p>Hoje convido vocês a refletirem sobre o texto que se encontra em Lucas 5.1-11.</p> <p>Você sabe o que significa a palavra expectativa?</p> <p>É o estado ou qualidade de esperar algo ou alguma coisa que seja viável ou provável que aconteça; um grande desejo por receber uma notícia ou presenciar um acontecimento que seja benéfico.</p> <p>Onde você tem colocado suas expectativas?</p> <p>Muitas vezes colocamos nossa esperança em pessoas, instituições, no dinheiro e em tantas outras coisas.</p>
+<p>A expectativa de Pedro e de seus companheiros, após uma longa e dura noite de trabalho, foi frustrada, eles já estavam lavando as redes quando Jesus lhes pediu o barco emprestado para sobre ele ensinar a multidão, mesmo cansados atenderam seu pedido. Quando Jesus acaba a mensagem Ele diz para Pedro levar o barco para águas fundas e então lançar a rede para pescar. Pedro diz que mesmo tendo trabalhado durante toda a noite , iriam obedecê-lo, pois sabia em quem estava colocando sua expectativa. Os pescadores foram surpreendidos pelo poder de Deus, foram tantos peixes que os barcos quase afundaram.</p>
 
-<p>Primeiro, a visão do filho que ficou:</p> Às vezes nós nos acostumamos com os presentes de Deus, a ponto de não enxergarmos mais suas bençãos em nosso dia-a-dia. Uma roupa nova, um carro novo, um fogão novo; tudo isso são presentes do Senhor para nós! </p>
- <p>As vezes estamos sem dinheiro para comprar algo e logo aquilo aparece como mágica em nossas mãos. Não, não é sorte! É Deus sendo seu Pai e te presenteando. Porque como foi dito na parábola tudo que é de Deus é seu! Então pare de olhar para o milagre que Deus está fazendo na vida do irmão que acabou de se converter, de voltar para Jesus ou de aceitá-lo verdadeiramente, porque é a primeira vez de muito tempo que ele recebe algo de Deus; logo, a benção será realmente mais fácil de se notar!</p>
- <p>Pare de olhar para as novas bençãos dele e veja todas as suas, que você ganha todos os dias: sua saúde, sua casa, sua família…tudo o que tens, tudo o que Deus não tem te deixado faltar. O Senhor cuida de você a cada mínimo detalhe porque você já é dEle. Mas esse irmão que voltou perdeu tudo e precisa de tudo novo. Você já tem tudo, é só parar para olhar..</p>
+<p>Portanto podemos aprender que se nossas expectativas estão em Deus certamente elas não serão frustradas.</p>
 
-<p>Em seguida, temos temos a visão do filho que foi embora:</p>
-<p>Deus perdoa, se você se foi, se você se afastou e trocou tudo que Ele te deu, todos os planos e todas as bençãos pelo pecado, mas se arrepende de coração, VOLTE!</p>
-<p>Volte porque o mundo te dá migalhas mas você sabe que Deus até aos servos dá o pão para comerem! Você sabe que Ele perdoa os arrependidos de coração.</p>
-<p>Enquanto em pecado nós nos afastamos de Deus pois Ele é justo e não habita onde habitam as trevas, mas quando nos arrependemos e pedimos perdão genuíno você abre espaço para o amor de Deus e os céus fazem festa com seu retorno.</p>
-<p>E se você não se acha digno de voltar, eu lhe pergunto: quem é? Venha ao Pai! Ele deixa as 99 ovelhas para te buscar, mas é você que decide se irá retornar com Ele pra o rebanho…</p>
+</p>ORAÇÃO: Pai, nós te amamos,que o Seu nome seja engrandecido, peço que venha nos ensinar a colocar nossa esperança e a nossa confiança em Ti, em nome de Jesus, amém.</p>
 
-<p>Victorya Neves Mattos Silva</p>
+<p>Sofia Oliveira, igreja Metodista em Ouro branco-MG</p>
+
 </div>
   </div>
 </div>
@@ -1061,8 +1056,8 @@ $today = 33;
   // print_r($days);
   $DiaProvisorios = [
     1 => [ 
-        0=> ['bookOfTheDay' => 'gn', 'chaptersOfTheDay' => array('24')],	
-        1 => [ 'bookOfTheDay' => 'mt', 'chaptersOfTheDay' => array('9')]
+        0=> ['bookOfTheDay' => 'gn', 'chaptersOfTheDay' => array('27','28')],	
+        1 => [ 'bookOfTheDay' => 'mt', 'chaptersOfTheDay' => array('11')]
       ],
     2 => [ 
         0=> ['bookOfTheDay' => 'gn', 'chaptersOfTheDay' => array('25','26')],	
@@ -1073,6 +1068,9 @@ $today = 33;
   $day = $DiaProvisorios[1];
   if($thirtyOneDaysAgoDay ==  10){
        $day = $DiaProvisorios[2];
+  }
+   if($thirtyOneDaysAgoDay ==  11){
+       $day = $DiaProvisorios[1];
   }
   // $day = $days[$monthC . $today];
   // echo $day['1'][0]['bookOfTheDay'];
