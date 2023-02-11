@@ -545,12 +545,8 @@ a {
 <?php
 function automateGetDay($today){
   error_reporting(0);
-
-
+  header('Content-type: text/plain; charset=utf-8');
 $schedule = "
-Janeiro
-
-Dia Cap Cap
 1 Gn 1-3 Mt 1
 2 Gn 4-6 Mt 2
 3 Gn 7-10 Mt 3
@@ -581,13 +577,9 @@ Dia Cap Cap
 28 Êx 10,11 Mc 1
 29 Êx 12,13 Mc 2
 30 Êx 14,15 Mc 3
-31 Reflexão Reflexão
 
-Fevereiro
 
-@raquelkelvia
 
-Dia Cap Cap
 1 Êx 16,17 Mc 4
 2 Êx 18-20 Mc 5
 3 Êx 21,22 Mc 6
@@ -617,11 +609,6 @@ Dia Cap Cap
 27 Lv 25 Lc 14
 28 Lv 26,27 Lc 15
 
-Março
-
-@raquelkelvia
-
-Dia Cap Cap
 1 Nm 1 Lc 16
 2 Nm 2,3 Lc 17
 3 Nm 4 Lc 18
@@ -652,13 +639,9 @@ Dia Cap Cap
 28 Dt 11,12 Jo 19
 29 Dt 13,14 Jo 20
 30 Dt 15,16 Jo 21
-31 Reflexão Reflexão
 
-Abril
 
-@raquelkelvia
 
-Dia Cap Cap
 1 Dt 17,18 At 1
 2 Dt 19-21 At 2
 3 Dt 22,23 At 3
@@ -690,11 +673,7 @@ Dia Cap Cap
 29 Jz 17,18 Rm 1
 30 Jz 19 Rm 2
 
-Maio
 
-@raquelkelvia
-
-Dia Cap Cap
 1 Jz 20-21 Rm 3
 2 Rt1-4 Rm 4
 3 1 Sm 1,2 Rm 5
@@ -725,13 +704,8 @@ Dia Cap Cap
 28 2 Sm 23,24 1Co 14
 29 1 Rs 1 1Co 15
 30 1 Rs 2 1Co 16
-31 Reflexão Reflexão
 
-Junho
 
-@raquelkelvia
-
-Dia Cap Cap
 1 1 Rs 3,4 2Co 1
 2 1 Rs 5,6 2Co 2
 3 1 Rs 7 2Co 3
@@ -763,11 +737,6 @@ Dia Cap Cap
 29 1 Cr 7,8 Fl 4
 30 1 Cr 9,10 Cl 1
 
-Julho
-
-@raquelkelvia
-
-Dia Cap Cap
 1 1 Cr 11,12 Cl 2
 2 1 Cr 13-15 Cl 3
 3 1 Cr 16,17 Cl 4
@@ -798,13 +767,9 @@ Dia Cap Cap
 28 Ne 1-3 Hb 4,5
 29 Ne 4,5 Hb 6
 30 Ne 6,7 Hb 7
-31 Reflexão Reflexão
 
-Agosto
 
-@raquelkelvia
 
-Dia Cap Cap
 1 Ne 8,9 Hb 8
 2 Ne 10,11 Hb 9
 3 Ne 12,13 Hb 10
@@ -835,13 +800,8 @@ Dia Cap Cap
 28 Is 1,2 Ap 1
 29 Is 3-5 Ap 2
 30 Is 6,7 Ap 3
-31 Reflexão Reflexão
 
-Setembro
 
-@raquelkelvia
-
-Dia Cap Cap
 1 Is 8,9 Ap 4
 2 Is 10,11 Ap 5,6
 3 Is 12-14 Ap 7,8
@@ -873,11 +833,6 @@ Dia Cap Cap
 29 Jr 11,12 Sl 35,36
 30 Jr 13,14 Sl 37
 
-Outubro
-
-@raquelkelvia
-
-Dia Cap Cap
 1 Jr 15,16 Sl 38,39
 2 Jr 17,18 Sl 40,41
 3 Jr 19-21 Sl 42-44
@@ -908,13 +863,7 @@ Dia Cap Cap
 28 Ez 10,11 Sl 100-102
 29 Ez 12,13 Sl 103-104
 30 Ez 14,15 Sl 105
-31 Reflexão Reflexão
 
-Novembro
-
-@raquelkelvia
-
-Dia Cap Cap
 1 Ez 16 Sl 106
 2 Ez 17,18 Sl 107
 3 Ez 19,20 Sl 108
@@ -946,11 +895,6 @@ Dia Cap Cap
 29 Os 10-12 Cl 3
 30 Os 13,14 Cl 4
 
-Dezembro
-
-@raquelkelvia
-
-Dia Cap Cap
 1 Jl 1-3 Pv 1
 2 Am 1, 2 Pv 2
 3 Am 3 Pv 3
@@ -980,21 +924,15 @@ Dia Cap Cap
 27 Ml 1 Pv 27
 28 Ml 2 Pv 28
 29 Ml 3 Pv 29
-30 Ml 4 Pv 30,31
-31 Reflexão Reflexão";
+30 Ml 4 Pv 30,31";
 
 
 $schedule_lines = explode("\n", $schedule);
-
+$cont = 1;
 foreach ($schedule_lines as $schedule_line) {
-    $new_month = diffMonth($schedule_line);
+  
+  if (preg_match('/^([0-9]+)\s+([\pL\pN]+)(\s+[\pL\pN\-,\s]+)/u', $schedule_line, $matches)) {
 
-    if($new_month != null){
-        $month = $new_month;
-    }
-
-    if (preg_match('/^([0-9]+) ([a-zA-Z]+)( [0-9a-zA-Z\-\, ]+)/', $schedule_line, $matches)) {
-        
         $chapters = array();
         $books_and_chapters = explode(' ', trim($matches[0]));
         $day = $books_and_chapters[0];
@@ -1003,7 +941,7 @@ foreach ($schedule_lines as $schedule_line) {
 
       
         $book = $books_and_chapters[1];
-
+        $book = strtolower($book);
         if(strpos($books_and_chapters[2],"-") == true){
           $chaptersSide = explode('-', $books_and_chapters[2]);
           for ($i = $chaptersSide[0]; $i != $chaptersSide[1]+1 ; $i++) {
@@ -1015,6 +953,7 @@ foreach ($schedule_lines as $schedule_line) {
         $books_of_the_day[] = ['bookOfTheDay' => $book, 'chaptersOfTheDay' => $chapters];
         
         $book = $books_and_chapters[3];
+        $book = strtolower($book);
         if(str_contains($books_and_chapters[4],"-") == true){
           $chaptersSide = explode('-', $books_and_chapters[4]);
           for ($i = $chaptersSide[0]; $i != $chaptersSide[1]+1 ; $i++) {
@@ -1027,9 +966,12 @@ foreach ($schedule_lines as $schedule_line) {
         }
         $books_of_the_day[] = ['bookOfTheDay' => $book, 'chaptersOfTheDay' => $chapters];
 
-        $days[$month . $day] = $books_of_the_day;
-    }
+        $days[$cont] = $books_of_the_day;
+        $cont++;
+      }
 }
+// echo "<pre>";
+// print_r($days);
 date_default_timezone_set('America/Sao_Paulo');
 
 $oneMonthAgo = date('Y-m-d', strtotime("-1 month"));
@@ -1040,38 +982,18 @@ $day_number = 1 + date('d', strtotime("-1 month"));;
 $month_number = strftime('%B');
 $year = date("Y");
 
-//Loop by books
-$today = 33;
-
-  $today = 1;
-
   //Get the day of the month
   $month = date('F');
   
-  $monthC = diffMonthEnglish($month_number);
-  $thirtyOneDaysAgoDay = date('d');
 
-  $oneMonthAgo = date('F', strtotime("-1 month"));
-  
-  // print_r($days);
-  $DiaProvisorios = [
-    1 => [ 
-        0=> ['bookOfTheDay' => 'gn', 'chaptersOfTheDay' => array('27','28')],	
-        1 => [ 'bookOfTheDay' => 'mt', 'chaptersOfTheDay' => array('11')]
-      ],
-    2 => [ 
-        0=> ['bookOfTheDay' => 'gn', 'chaptersOfTheDay' => array('25','26')],	
-        1 => [ 'bookOfTheDay' => 'mt', 'chaptersOfTheDay' => array('10')]
-    ]
-  ];
+  $day_of_year = date('z') + 1;
+  $day_31_days_ago = $day_of_year - 31;
 
-  $day = $DiaProvisorios[1];
-  if($thirtyOneDaysAgoDay ==  10){
-       $day = $DiaProvisorios[2];
-  }
-   if($thirtyOneDaysAgoDay ==  11){
-       $day = $DiaProvisorios[1];
-  }
+  if ($day_31_days_ago < 0) {
+    $day_31_days_ago += 365;
+}
+  $day = $days[$day_31_days_ago];
+
   // $day = $days[$monthC . $today];
   // echo $day['1'][0]['bookOfTheDay'];
   // Inicializa a sessão cURL
@@ -1113,69 +1035,11 @@ $today = 33;
       // Imprime o texto do versiculo
       //print_r($book_data);
       
-      printoToUser($thirtyOneDaysAgoDay, $month_number, $year, $book_data,$bookOfTheDay,$chaptersOfTheDay);
+      printoToUser($day_31_days_ago, $month_number, $year, $book_data,$bookOfTheDay,$chaptersOfTheDay);
     }
 
     
   
-}
-
-function diffMonth($line){
-  $line = trim($line);
- if($line === "Janeiro"){
-   return 'Jn';
- }else if($line === "Fevereiro"){
-   return 'Fv';
-  }else if($line === "Março"){
-    return 'Mr';
-  }else if($line === "Abril"){
-    return 'Ab';
-  }else if($line === "Maio"){
-    return 'Mz';
-  }else if($line === "Junho"){
-    return 'Jn';
-  }else if($line === "Julho"){
-    return 'Jl';
-  }else if($line === "Agosto"){
-    return 'Ag';
-  }else if($line === "Setembro"){
-    return 'St';
-  }else if($line === "Outubro"){
-    return 'Ot';
-  }else if($line === "Novembro"){
-    return 'Nv';
-  }else if($line === "Dezembro"){
-    return 'Dz';
-  }
-
-}
-function diffMonthEnglish($line) {
-  $line = trim($line);
-  if($line === "January"){
-    return 'Jn';
-  }else if($line === "February"){
-    return 'Fv';
-  }else if($line === "March"){
-    return 'Mr';
-  }else if($line === "April"){
-    return 'Ap';
-  }else if($line === "May"){
-    return 'Mz';
-  }else if($line === "June"){
-    return 'Jn';
-  }else if($line === "July"){
-    return 'Jl';
-  }else if($line === "August"){
-    return 'Ag';
-  }else if($line === "September"){
-    return 'St';
-  }else if($line === "October"){
-    return 'Ot';
-  }else if($line === "November"){
-    return 'No';
-  }else if($line === "December"){
-    return 'De';
-  }
 }
 
 
@@ -1231,474 +1095,5 @@ function getDays($chaptersOfTheDay){
   return $string;
 }
 
-function getDay($day){
- // echo $day;
-switch($day){
-  case '1':
-    echo ' <div class="example-1 card" >
-      <div class="wrapper" style="background: url(https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/cover no-repeat;">
-        <div class="date">
-          <span class="day">01</span>
-          <span class="month">Jan</span>
-          <span class="year">2023</span>
-        </div>
-        <div class="data">
-          <div class="content">
-            <span class="author">Autor : Moisês </span>
-            <h1 class="title"><a href="https://www.bibliaonline.com.br/nvi/Gn/1">Gn 1 e 2</a></h1>
-            <p class="text">No princípio Deus criou os céus e a terra.
-            Era a terra sem forma e vazia; trevas cobriam a face do abismo, e o Espírito de Deus se movia sobre a face das águas.
-            Disse Deus: "Haja luz", e houve luz.
-            Deus viu que a luz era boa, e separou a luz das trevas.
-            
-            Gênesis 1:1-4</p>
-          </div>
-        </div>
-      </div>
-    </div>';
-    echo ' <div class="example-1 example-3 card">
-      <div class="wrapper" style="background: url(https://images.pexels.com/photos/51159/letter-handwriting-family-letters-written-51159.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/cover no-repeat;">
-        <div class="date">
-          <span class="day">01</span>
-          <span class="month">Jan</span>
-          <span class="year">2023</span>
-        </div>
-        <div class="data">
-          <div class="content">
-            <span class="author">Autor: Lucas </span>
-            <h1 class="title"><a href="https://www.bibliaonline.com.br/nvi/Lc/1">Lucas 1</a></h1>
-            <p class="text">Ora, a serpente era o mais astuto de todos os animais selvagens que o Senhor Deus tinha feito. E ela perguntou à mulher: "Foi isto mesmo que Deus disse: ‘Não comam de nenhum fruto das árvores do jardim’? "
-Respondeu a mulher à serpente: "Podemos comer do fruto das árvores do jardim,
-mas Deus disse: ‘Não comam do fruto da árvore que está no meio do jardim, nem toquem nele; do contrário vocês morrerão’ ".
-Gênesis 3:1-3</p>        
-          </div>
-        </div>
-      </div>
-    </div>';
-      break;
-    case '2':
-        echo ' <div class="example-1 card" >
-          <div class="wrapper" style="background: url(https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/cover no-repeat;">
-            <div class="date">
-              <span class="day">02</span>
-              <span class="month">Jan</span>
-              <span class="year">2023</span>
-            </div>
-            <div class="data">
-              <div class="content">
-                <span class="author">Autor : Moisês </span>
-                <h1 class="title"><a href="https://www.bibliaonline.com.br/nvi/Gn/3">Gn 3 a 5</a></h1>
-                <p class="text">Ora, a serpente era o mais astuto de todos os animais selvagens que o Senhor Deus tinha feito. E ela perguntou à mulher: "Foi isto mesmo que Deus disse: ‘Não comam de nenhum fruto das árvores do jardim’? "
-                Respondeu a mulher à serpente: "Podemos comer do fruto das árvores do jardim,
-                mas Deus disse: ‘Não comam do fruto da árvore que está no meio do jardim, nem toquem nele; do contrário vocês morrerão’ ".
-                
-                Gênesis 3:1-3</p>
-              </div>
-            </div>
-          </div>
-        </div>';
-        echo ' <div class="example-1 example-3 card">
-          <div class="wrapper" style="background: url(https://images.pexels.com/photos/51159/letter-handwriting-family-letters-written-51159.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/cover no-repeat;">
-            <div class="date">
-              <span class="day">02</span>
-              <span class="month">Jan</span>
-              <span class="year">2023</span>
-            </div>
-            <div class="data">
-              <div class="content">
-                <span class="author">Autor: Lucas </span>
-                <h1 class="title"><a href="https://www.bibliaonline.com.br/nvi/Lc/2">Lucas 2</a></h1>
-                <p class="text">Naqueles dias César Augusto publicou um decreto ordenando o recenseamento de todo o império romano.
-                Este foi o primeiro recenseamento feito quando Quirino era governador da Síria.
-                E todos iam para a sua cidade natal, a fim de alistar-se.
-                Assim, José também foi da cidade de Nazaré da Galiléia para a Judéia, para Belém, cidade de Davi, porque pertencia à casa e à linhagem de Davi.
-                
-                Lucas 2:1-4</p>        
-              </div>
-            </div>
-          </div>
-        </div>';
-          break;
-          case '3':
-            echo ' <div class="example-1 card" >
-              <div class="wrapper" style="background: url(https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/cover no-repeat;">
-                <div class="date">
-                  <span class="day">03</span>
-                  <span class="month">Jan</span>
-                  <span class="year">2023</span>
-                </div>
-                <div class="data">
-                  <div class="content">
-                    <span class="author">Autor : Moisês </span>
-                    <h1 class="title"><a href="https://www.bibliaonline.com.br/nvi/Gn/6">Gn 6 a 8</a></h1>
-                    <p class="text">Quando os homens começaram a multiplicar-se na terra e lhes nasceram filhas,
-                    os filhos de Deus viram que as filhas dos homens eram bonitas e escolheram para si aquelas que lhes agradaram.
-                    Então disse o Senhor: "Por causa da perversidade do homem, meu Espírito não contenderá com ele para sempre; e ele só viverá cento e vinte anos".
-                    
-                    Gênesis 6:1-3</p>
-                  </div>
-                </div>
-              </div>
-            </div>';
-            echo ' <div class="example-1 example-3 card">
-              <div class="wrapper" style="background: url(https://images.pexels.com/photos/51159/letter-handwriting-family-letters-written-51159.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/cover no-repeat;">
-                <div class="date">
-                  <span class="day">03</span>
-                  <span class="month">Jan</span>
-                  <span class="year">2023</span>
-                </div>
-                <div class="data">
-                  <div class="content">
-                    <span class="author">Autor: Lucas </span>
-                    <h1 class="title"><a href="https://www.bibliaonline.com.br/nvi/Lc/3">Lucas 3</a></h1>
-                    <p class="text">No décimo quinto ano do reinado de Tibério César, quando Pôncio Pilatos era governador da Judéia; Herodes, tetrarca da Galiléia; seu irmão Filipe, tetrarca da Ituréia e Traconites; e Lisânias, tetrarca de Abilene;
-                    Anás e Caifás exerciam o sumo sacerdócio. Foi nesse ano que veio a palavra do Senhor a João, filho de Zacarias, no deserto.
-                    Ele percorreu toda a região próxima ao Jordão, pregando um batismo de arrependimento para o perdão dos pecados.
-                    
-                    Lucas 3:1-3</p>        
-                  </div>
-                </div>
-              </div>
-            </div>';
-              break;
-        case '4':
-          echo ' <div class="example-1 card" >
-            <div class="wrapper" style="background: url(https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/cover no-repeat;">
-              <div class="date">
-                <span class="day">04</span>
-                <span class="month">Jan</span>
-                <span class="year">2023</span>
-              </div>
-              <div class="data">
-                <div class="content">
-                  <span class="author">Autor : Moisês </span>
-                  <h1 class="title"><a href="https://www.bibliaonline.com.br/nvi/Gn/9">Gn 9 a 11</a></h1>
-                  <p class="text">Deus abençoou Noé e seus filhos, dizendo-lhes: "Sejam férteis, multipliquem-se e encham a terra.
-                  Todos os animais da terra tremerão de medo diante de vocês: os animais selvagens, as aves do céu, as criaturas que se movem rente ao chão e os peixes do mar; eles estão entregues em suas mãos.
-                  Tudo o que vive e se move lhes servirá de alimento. Assim como lhes dei os vegetais, agora lhes dou todas as coisas.
-                  
-                  Gênesis 9:1-3</p>
-                </div>
-              </div>
-            </div>
-          </div>';
-          echo ' <div class="example-1 example-3 card">
-            <div class="wrapper" style="background: url(https://images.pexels.com/photos/51159/letter-handwriting-family-letters-written-51159.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/cover no-repeat;">
-              <div class="date">
-                <span class="day">04</span>
-                <span class="month">Jan</span>
-                <span class="year">2023</span>
-              </div>
-              <div class="data">
-                <div class="content">
-                  <span class="author">Autor: Lucas </span>
-                  <h1 class="title"><a href="https://www.bibliaonline.com.br/nvi/Lc/4">Lucas 4</a></h1>
-                  <p class="text">Jesus, cheio do Espírito Santo, voltou do Jordão e foi levado pelo Espírito ao deserto,
-                  onde, durante quarenta dias, foi tentado pelo diabo. Não comeu nada durante esses dias e, ao fim deles, teve fome.
-                  O diabo lhe disse: "Se você é o Filho de Deus, mande a esta pedra que se transforme em pão".
-                  Jesus respondeu: "Está escrito: ‘Nem só de pão viverá o homem’ ".
-                  
-                  Lucas 4:1-4</p>        
-                </div>
-              </div>
-            </div>
-          </div>';
-            break;
-            case '5':
-              echo ' <div class="example-1 card" >
-                <div class="wrapper" style="background: url(https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/cover no-repeat;">
-                  <div class="date">
-                    <span class="day">05</span>
-                    <span class="month">Jan</span>
-                    <span class="year">2023</span>
-                  </div>
-                  <div class="data">
-                    <div class="content">
-                      <span class="author">Autor : Moisês </span>
-                      <h1 class="title"><a href="https://www.bibliaonline.com.br/nvi/Gn/12">Gn 12 a 14</a></h1>
-                      <p class="text">Então o Senhor disse a Abrão: "Saia da sua terra, do meio dos seus parentes e da casa de seu pai, e vá para a terra que eu lhe mostrarei.
-                      "Farei de você um grande povo, e o abençoarei. Tornarei famoso o seu nome, e você será uma bênção.
-                      Abençoarei os que o abençoarem, e amaldiçoarei os que o amaldiçoarem; e por meio de você todos os povos da terra serão abençoados".
-                      
-                      Gênesis 12:1-3</p>
-                    </div>
-                  </div>
-                </div>
-              </div>';
-              echo ' <div class="example-1 example-3 card">
-                <div class="wrapper" style="background: url(https://images.pexels.com/photos/51159/letter-handwriting-family-letters-written-51159.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/cover no-repeat;">
-                  <div class="date">
-                    <span class="day">05</span>
-                    <span class="month">Jan</span>
-                    <span class="year">2023</span>
-                  </div>
-                  <div class="data">
-                    <div class="content">
-                      <span class="author">Autor: Lucas </span>
-                      <h1 class="title"><a href="https://www.bibliaonline.com.br/nvi/Lc/5">Lucas 5</a></h1>
-                      <p class="text">Certo dia Jesus estava perto do lago de Genesaré, e uma multidão o comprimia de todos os lados para ouvir a palavra de Deus.
-                      Viu à beira do lago dois barcos, deixados ali pelos pescadores, que estavam lavando as suas redes.
-                      Entrou num dos barcos, o que pertencia a Simão, e pediu-lhe que o afastasse um pouco da praia. Então sentou-se, e do barco ensinava o povo.
-                      
-                      Lucas 5:1-3</p>        
-                    </div>
-                  </div>
-                </div>
-              </div>';
-                break;
-                case '6':
-                  echo ' <div class="example-1 card" >
-                    <div class="wrapper" style="background: url(https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/cover no-repeat;">
-                      <div class="date">
-                        <span class="day">06</span>
-                        <span class="month">Jan</span>
-                        <span class="year">2023</span>
-                      </div>
-                      <div class="data">
-                        <div class="content">
-                          <span class="author">Autor : Moisês </span>
-                          <h1 class="title"><a href="https://www.bibliaonline.com.br/nvi/Gn/15">Gn 15 a 17</a></h1>
-                          <p class="text">Depois dessas coisas o Senhor falou a Abrão numa visão: "Não tenha medo, Abrão! Eu sou o seu escudo; grande será a sua recompensa! "
-                          Mas Abrão perguntou: "Ó Soberano Senhor, que me darás, se continuo sem filhos e o herdeiro do que possuo é Eliézer de Damasco? "
-                          E acrescentou: "Tu não me deste filho algum! Um servo da minha casa será o meu herdeiro! "
-                          Então o Senhor deu-lhe a seguinte resposta: "Seu herdeiro não será esse. Um filho gerado por você mesmo será o seu herdeiro".
-                          
-                          Gênesis 15:1-4</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>';
-                  echo ' <div class="example-1 example-3 card">
-                    <div class="wrapper" style="background: url(https://images.pexels.com/photos/51159/letter-handwriting-family-letters-written-51159.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/cover no-repeat;">
-                      <div class="date">
-                        <span class="day">06</span>
-                        <span class="month">Jan</span>
-                        <span class="year">2023</span>
-                      </div>
-                      <div class="data">
-                        <div class="content">
-                          <span class="author">Autor: Lucas </span>
-                          <h1 class="title"><a href="https://www.bibliaonline.com.br/nvi/Lc/6">Lucas 6</a></h1>
-                          <p class="text">Certo sábado, enquanto Jesus passava pelas lavouras de cereal, seus discípulos começaram a colher e a debulhar espigas com as mãos, comendo os grãos.
-                          Alguns fariseus perguntaram: "Por que vocês estão fazendo o que não é permitido no sábado? "
-                          Jesus lhes respondeu: "Vocês nunca leram o que fez Davi, quando ele e seus companheiros estavam com fome?
-                          Ele entrou na casa de Deus e, tomando os pães da Presença, comeu o que apenas aos sacerdotes era permitido comer, e os deu também aos seus companheiros".
-                          
-                          Lucas 6:1-4</p>        
-                        </div>
-                      </div>
-                    </div>
-                  </div>';
-                    break;
-                    case '7':
-                      echo ' <div class="example-1 card" >
-                        <div class="wrapper" style="background: url(https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/cover no-repeat;">
-                          <div class="date">
-                            <span class="day">06</span>
-                            <span class="month">Jan</span>
-                            <span class="year">2023</span>
-                          </div>
-                          <div class="data">
-                            <div class="content">
-                              <span class="author">Autor : Moisês </span>
-                              <h1 class="title"><a href="https://www.bibliaonline.com.br/nvi/Gn/18">Gn 18 a 19</a></h1>
-                              <p class="text">O Senhor apareceu a Abraão perto dos carvalhos de Manre, quando ele estava sentado à entrada de sua tenda, na hora mais quente do dia.
-                              Abraão ergueu os olhos e viu três homens em pé, a pouca distância. Quando os viu, saiu da entrada de sua tenda, correu ao encontro deles e curvou-se até ao chão.
-                              Disse ele: "Meu senhor, se mereço o seu favor, não passe pelo seu servo sem fazer uma parada.
-                              Mandarei buscar um pouco d’água para que lavem os pés e descansem debaixo desta árvore.
-                              
-                              Gênesis 18:1-4</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>';
-                      echo ' <div class="example-1 example-3 card">
-                        <div class="wrapper" style="background: url(https://images.pexels.com/photos/12275925/pexels-photo-12275925.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/cover no-repeat;">
-                          <div class="date">
-                            <span class="day">06</span>
-                            <span class="month">Jan</span>
-                            <span class="year">2023</span>
-                          </div>
-                          <div class="data">
-                            <div class="content">
-                              <span class="author">Autor: Lucas </span>
-                              <h1 class="title"><a href="https://www.bibliaonline.com.br/nvi/Sl/3">Salmos 3</a></h1>
-                              <p class="text">Senhor, muitos são os meus adversários! Muitos se rebelam contra mim!
-                              São muitos os que dizem a meu respeito: "Deus nunca o salvará! " Pausa
-                              Mas tu, Senhor, és o escudo que me protege; és a minha glória e me fazes andar de cabeça erguida.
-                              
-                              Salmos 3:1-3</p>        
-                            </div>
-                          </div>
-                        </div>
-                      </div>';
-                      echo ' <div class="example-1 example-3 card">
-                        <div class="wrapper" style="background: url(https://images.pexels.com/photos/51159/letter-handwriting-family-letters-written-51159.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/cover no-repeat;">
-                          <div class="date">
-                            <span class="day">06</span>
-                            <span class="month">Jan</span>
-                            <span class="year">2023</span>
-                          </div>
-                          <div class="data">
-                            <div class="content">
-                              <span class="author">Autor: Lucas </span>
-                              <h1 class="title"><a href="https://www.bibliaonline.com.br/nvi/Lc/7">Lucas 7</a></h1>
-                              <p class="text">Tendo terminado de dizer tudo isso ao povo, Jesus entrou em Cafarnaum.
-                              Ali estava doente, quase à morte, o servo de um centurião, a quem seu senhor estimava muito.
-                              Ele ouviu falar de Jesus e enviou-lhe alguns líderes religiosos dos judeus, pedindo-lhe que fosse curar o seu servo.
-                              Chegando-se a Jesus, suplicaram-lhe com insistência: "Este homem merece que lhe faças isso,
-                              
-                              Lucas 7:1-4</p>        
-                            </div>
-                          </div>
-                        </div>
-                      </div>';
-                        break;
-case '8':
-  echo ' <div class="example-1 card" >
-    <div class="wrapper" style="background: url(https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/cover no-repeat;">
-      <div class="date">
-        <span class="day">06</span>
-        <span class="month">Jan</span>
-        <span class="year">2023</span>
-      </div>
-      <div class="data">
-        <div class="content">
-          <span class="author">Autor : Moisês </span>
-          <h1 class="title"><a href="https://www.bibliaonline.com.br/nvi/Gn/18">Gn 20 a 22</a></h1>
-          <p class="text">Abraão partiu dali para a região do Neguebe e foi viver entre Cades e Sur. Depois morou algum tempo em Gerar.
-          Ele dizia que Sara, sua mulher, era sua irmã. Então Abimeleque, rei de Gerar, mandou buscar Sara e tomou-a para si.
-          Certa noite Deus veio a Abimeleque num sonho e lhe disse: "Você morrerá! A mulher que você tomou é casada".
-          
-          Gênesis 20:1-3</p>
-        </div>
-      </div>
-    </div>
-  </div>';
-  echo ' <div class="example-1 example-3 card">
-    <div class="wrapper" style="background: url(https://images.pexels.com/photos/51159/letter-handwriting-family-letters-written-51159.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/cover no-repeat;">
-      <div class="date">
-        <span class="day">06</span>
-        <span class="month">Jan</span>
-        <span class="year">2023</span>
-      </div>
-      <div class="data">
-        <div class="content">
-          <span class="author">Autor: Lucas </span>
-          <h1 class="title"><a href="https://www.bibliaonline.com.br/nvi/Lc/8">Lucas 8</a></h1>
-          <p class="text">Depois disso Jesus ia passando pelas cidades e povoados proclamando as boas novas do Reino de Deus. Os Doze estavam com ele,
-          e também algumas mulheres que haviam sido curadas de espíritos malignos e doenças: Maria, chamada Madalena, de quem haviam saído sete demônios;
-          Joana, mulher de Cuza, administrador da casa de Herodes; Susana e muitas outras. Essas mulheres ajudavam a sustentá-los com os seus bens.
-          
-          Lucas 8:1-3</p>        
-        </div>
-      </div>
-    </div>
-  </div>';
-    break;
-  case '291':
-    echo ' <div class="example-1 card" >
-    <div class="wrapper">
-      <div class="date">
-        <span class="day">18</span>
-        <span class="month">Out</span>
-        <span class="year">2022</span>
-      </div>
-      <div class="data">
-        <div class="content">
-          <span class="author">Autor : Desconhecido </span>
-          <h1 class="title"><a href="https://www.bibliaonline.com.br/nvi/jó/3">Jó 3 e 4</a></h1>
-          <p class="text">Na terra de Uz vivia um homem chamado Jó. Era homem íntegro e justo; temia a Deus e evitava o mal. Tinha ele sete filhos e três filhas, e possuía sete mil ovelhas, três mil camelos, quinhentas parelhas de boi e quinhentos jumentos, e tinha muita gente a seu serviço. Era o homem mais rico do oriente. Jó 1:1-3</p>
-        </div>
-      </div>
-    </div>
-  </div>';
-  echo ' <div class="example-1 example-3 card">
-    <div class="wrapper">
-      <div class="date">
-        <span class="day">18</span>
-        <span class="month">Out</span>
-        <span class="year">2022</span>
-      </div>
-      <div class="data">
-        <div class="content">
-          <span class="author">Autor: Lucas </span>
-          <h1 class="title"><a href="https://www.bibliaonline.com.br/nvi/atos/8">Atos 8 e 9</a></h1>
-          <p class="text">E Saulo estava ali, consentindo na morte de Estêvão. Naquela ocasião desencadeou-se grande perseguição contra a igreja em Jerusalém. Todos, exceto os apóstolos, foram dispersos pelas regiões da Judéia e de Samaria. Alguns homens piedosos sepultaram Estêvão e fizeram por ele grande lamentação. Atos 8:1,2</p>        
-        </div>
-      </div>
-    </div>
-  </div>';
-    break;
-        case '292':
-    echo ' <div class="example-1 card">
-    <div class="wrapper">
-      <div class="date">
-        <span class="day">18</span>
-        <span class="month">Out</span>
-        <span class="year">2022</span>
-      </div>
-      <div class="data">
-        <div class="content">
-          <span class="author">Autor : Desconhecido </span>
-          <h1 class="title"><a href="https://www.bibliaonline.com.br/nvi/jó/3">Jó 3 e 4</a></h1>
-          <p class="text">Na terra de Uz vivia um homem chamado Jó. Era homem íntegro e justo; temia a Deus e evitava o mal. Tinha ele sete filhos e três filhas, e possuía sete mil ovelhas, três mil camelos, quinhentas parelhas de boi e quinhentos jumentos, e tinha muita gente a seu serviço. Era o homem mais rico do oriente. Jó 1:1-3</p>
-        </div>
-      </div>
-    </div>
-  </div>';
-  echo ' <div class="example-1 example-3 card">
-    <div class="wrapper">
-      <div class="date">
-        <span class="day">18</span>
-        <span class="month">Out</span>
-        <span class="year">2022</span>
-      </div>
-      <div class="data">
-        <div class="content">
-          <span class="author">Autor: Lucas </span>
-          <h1 class="title"><a href="https://www.bibliaonline.com.br/nvi/atos/8">Atos 8 e 9</a></h1>
-          <p class="text">E Saulo estava ali, consentindo na morte de Estêvão. Naquela ocasião desencadeou-se grande perseguição contra a igreja em Jerusalém. Todos, exceto os apóstolos, foram dispersos pelas regiões da Judéia e de Samaria. Alguns homens piedosos sepultaram Estêvão e fizeram por ele grande lamentação. Atos 8:1,2</p>        
-        </div>
-      </div>
-    </div>
-  </div>';
-    break;
-    case '325':
-      echo ' <div class="example-1 card" >
-      <div class="wrapper" style="background: url(https://images.pexels.com/photos/54326/runners-male-sport-run-54326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/cover no-repeat;">
-        <div class="date">
-          <span class="day">18</span>
-          <span class="month">Out</span>
-          <span class="year">2022</span>
-        </div>
-        <div class="data">
-          <div class="content">
-            <span class="author">Autor : Desconhecido </span>
-            <h1 class="title"><a href="https://www.bibliaonline.com.br/nvi/jó/3">Jó 3 e 4</a></h1>
-            <p class="text">Na terra de Uz vivia um homem chamado Jó. Era homem íntegro e justo; temia a Deus e evitava o mal. Tinha ele sete filhos e três filhas, e possuía sete mil ovelhas, três mil camelos, quinhentas parelhas de boi e quinhentos jumentos, e tinha muita gente a seu serviço. Era o homem mais rico do oriente. Jó 1:1-3</p>
-          </div>
-        </div>
-      </div>
-    </div>';
-    echo ' <div class="example-1 example-3 card">
-      <div class="wrapper" style="background: url(https://images.pexels.com/photos/54326/runners-male-sport-run-54326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/cover no-repeat;">
-        <div class="date">
-          <span class="day">18</span>
-          <span class="month">Out</span>
-          <span class="year">2022</span>
-        </div>
-        <div class="data">
-          <div class="content">
-            <span class="author">Autor: Lucas </span>
-            <h1 class="title"><a href="https://www.bibliaonline.com.br/nvi/atos/8">Atos 8 e 9</a></h1>
-            <p class="text">E Saulo estava ali, consentindo na morte de Estêvão. Naquela ocasião desencadeou-se grande perseguição contra a igreja em Jerusalém. Todos, exceto os apóstolos, foram dispersos pelas regiões da Judéia e de Samaria. Alguns homens piedosos sepultaram Estêvão e fizeram por ele grande lamentação. Atos 8:1,2</p>        
-          </div>
-        </div>
-      </div>
-    </div>';
-      break;
-  }
-}
 
 ?>
