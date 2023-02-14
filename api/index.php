@@ -548,7 +548,7 @@ a {
 ‭‭Romanos‬ ‭12:1‬ ‭NTLH‬‬</p>
 
 <p>Qual sacrifício eu tenho dado a Deus? Repense seus atos, em que você tem gastado seu tempo? Suas prioridades, amizades… e assim saberá.</p>
-<p>Não apenas descubra, mas a partir daí mude! Ele te ama e devemos demonstrar nossa reciprocidade🫶.</p>
+<p>Não apenas descubra, mas a partir daí mude! Ele te ama e devemos demonstrar nossa reciprocidade <3 .</p>
 
       <p> Victorya Neves Mattos Silva </p>
 </div>
