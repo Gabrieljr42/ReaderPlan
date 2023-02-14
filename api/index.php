@@ -524,17 +524,33 @@ a {
   <div class="card example-1">
   <h1 style="text-align: center; font-size: 36px; margin-bottom: 20px;">Devocional do dia</h1>
   <div style="width: 100%; padding: 20px; background-color: #034378; text-align: center; font-family: sans-serif; font-size: 18px; line-height: 1.5; color: white;">
-  <p>Versículo base : Lucas 5-5</p>
+  <h4>Ofertas: Malaquias </h4>
 
-<p>Hoje convido vocês a refletirem sobre o texto que se encontra em Lucas 5.1-11.</p> <p>Você sabe o que significa a palavra expectativa?</p> <p>É o estado ou qualidade de esperar algo ou alguma coisa que seja viável ou provável que aconteça; um grande desejo por receber uma notícia ou presenciar um acontecimento que seja benéfico.</p> <p>Onde você tem colocado suas expectativas?</p> <p>Muitas vezes colocamos nossa esperança em pessoas, instituições, no dinheiro e em tantas outras coisas.</p>
-<p>A expectativa de Pedro e de seus companheiros, após uma longa e dura noite de trabalho, foi frustrada, eles já estavam lavando as redes quando Jesus lhes pediu o barco emprestado para sobre ele ensinar a multidão, mesmo cansados atenderam seu pedido. Quando Jesus acaba a mensagem Ele diz para Pedro levar o barco para águas fundas e então lançar a rede para pescar. Pedro diz que mesmo tendo trabalhado durante toda a noite , iriam obedecê-lo, pois sabia em quem estava colocando sua expectativa. Os pescadores foram surpreendidos pelo poder de Deus, foram tantos peixes que os barcos quase afundaram.</p>
+<p>“Foi com o alimento impuro que vocês me ofereceram no altar. E vocês ainda perguntam: “Como é que estamos te ofendendo?” Pois vocês me ofendem quando acham que têm o direito de profanar o meu altar. E me ofendem também porque pensam que não faz mal me oferecerem animais cegos, aleijados ou doentes. Pois procurem oferecer um animal desses ao governador! Acham que ele o aceitaria com prazer e atenderia os seus pedidos? Eu, o Senhor Todo-Poderoso, falei. Agora, sacerdotes, orem a Deus e peçam que ele nos abençoe. Mas será que ele vai atender quando vocês estão apresentando ofertas como essas?”
+‭‭Malaquias‬ ‭1:7-9‬ ‭</p>
 
-<p>Portanto podemos aprender que se nossas expectativas estão em Deus certamente elas não serão frustradas.</p>
+<p>Eu estava lendo a palavra com minha amiga quando me veio em mente uma pergunta. Deus levantava a mim o seguinte questionamento: “Que ofertas você tem me dado?” </p>
+<p>Em primeiro momento já entendi completamente a pergunta. O que tenho oferecido a Deus?</p>
+<p>Após a vinda de Cristo nós nos tornamos ofertas vivas para Deus, sem mais precisar queimar em altares as oferendas ao Senhor! </p>
+<p>Mas… se nós somos o sacrifício, devemos ser o bom sacrifício! </p>
+<p>Deus diz se ofender com os animais aleijados, doentes, feridos, cegos! Qual será o animal que temos sido? Qual será a oferta que temos dado a Deus?</p>
+<p>Será que eu tenho mesmo sido uma boa filha?</p> <p>Tenho mantido meu templo limpo para o Espírito Santo habitar?</p> <p>Mantido uma constância em oração e leitura da palavra? </p>
+<p>Nossas ofertas agora são nossas vidas, a partir do momento que nos entregamos para Deus e reconhecemos Jesus como nosso único salvador, entregamos nossa vida a Ele!!! Então, devemos constantemente observar se estamos andando em retidão com a palavra do Senhor, observar nossa relação com o Pai para ver se temos entregado a ele os sacrifícios que Ele merece!</p>
 
-</p>ORAÇÃO: Pai, nós te amamos,que o Seu nome seja engrandecido, peço que venha nos ensinar a colocar nossa esperança e a nossa confiança em Ti, em nome de Jesus, amém.</p>
+<p>“Vocês dizem: “Já estamos cansados de tudo isso!” e riem de mim e me tratam com desprezo. E ainda me oferecem um animal roubado ou um animal aleijado ou doente. Vocês acham que eu, o Senhor, vou aceitar isso? Maldito seja o mentiroso que me promete um animal perfeito do seu rebanho, mas oferece em sacrifício um animal defeituoso! Eu sou o Rei poderoso, e todas as nações me honram. Eu, o Senhor Todo-Poderoso, estou falando.”
+‭‭Malaquias‬ ‭1:13-14‬ ‭NTLH‬‬</p>
 
-<p>Sofia Oliveira, igreja Metodista em Ouro branco-MG</p>
+<p>E mais, não prometam aquilo que não cumprirão, pois nosso Deus cumpre tudo o que promete. <3</p>
+<p>Ele é bom, JUSTO e perfeito! Amável e correto.</p> 
+<p>Moisés nos ensina em suas leis como deve ser um sacrifício enquanto no velho testamento, deve ser limpo, sem falhas, bom. </p>
 
+<p>“Portanto, meus irmãos, por causa da grande misericórdia divina, peço que vocês se ofereçam completamente a Deus como um sacrifício vivo, dedicado ao seu serviço e agradável a ele. Esta é a verdadeira adoração que vocês devem oferecer a Deus.”
+‭‭Romanos‬ ‭12:1‬ ‭NTLH‬‬</p>
+
+<p>Qual sacrifício eu tenho dado a Deus? Repense seus atos, em que você tem gastado seu tempo? Suas prioridades, amizades… e assim saberá.</p>
+<p>Não apenas descubra, mas a partir daí mude! Ele te ama e devemos demonstrar nossa reciprocidade🫶.</p>
+
+      <p> Victorya Neves Mattos Silva </p>
 </div>
   </div>
 </div>
