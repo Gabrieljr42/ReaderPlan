@@ -1007,9 +1007,10 @@ $year = date("Y");
 
   if ($day_31_days_ago < 0) {
     $day_31_days_ago += 365;
-}
+  }
   $day = $days[$day_31_days_ago];
 
+  $day_31_days_ago =  date('j');
   // $day = $days[$monthC . $today];
   // echo $day['1'][0]['bookOfTheDay'];
   // Inicializa a sessão cURL
@@ -1020,6 +1021,11 @@ $year = date("Y");
 
       foreach($day as $book){
         $bookOfTheDay = $book['bookOfTheDay'];
+       
+        if($bookOfTheDay == 'Êx'){
+          $bookOfTheDay = 'ex';
+        }
+
         $chaptersOfTheDay = $book['chaptersOfTheDay'];
 
       // A URL do endpoint do API da Biblia.com para buscar versiculos
@@ -1064,10 +1070,15 @@ function getImage($bookOfTheDay){
     case 'gn':
       return 'https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
     break;
+    case 'ex':
+      return 'https://images.pexels.com/photos/4017971/pexels-photo-4017971.png?auto=compress&cs=tinysrgb&w=1600';
+    break;
     case 'mt':
       return 'https://images.unsplash.com/photo-1492052722242-2554d0e99e3a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';
     break;
-    
+    case 'mc':
+      return 'https://images.unsplash.com/photo-1492052722242-2554d0e99e3a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';
+    break;
   }
 }
 function printoToUser($day_number, $month_number, $year, $book_data,$bookOfTheDay,$chaptersOfTheDay){
