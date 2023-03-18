@@ -520,38 +520,7 @@ a {
  automateGetDay($day);
 
  ?>
- <!-- /Div with double the width -->
-  <div class="card example-1">
-  <h1 style="text-align: center; font-size: 36px; margin-bottom: 20px;">Devocional do dia</h1>
-  <div style="width: 100%; padding: 20px; background-color: #034378; text-align: center; font-family: sans-serif; font-size: 18px; line-height: 1.5; color: white;">
-  <h4>Ofertas: Malaquias </h4>
-
-<p>“Foi com o alimento impuro que vocês me ofereceram no altar. E vocês ainda perguntam: “Como é que estamos te ofendendo?” Pois vocês me ofendem quando acham que têm o direito de profanar o meu altar. E me ofendem também porque pensam que não faz mal me oferecerem animais cegos, aleijados ou doentes. Pois procurem oferecer um animal desses ao governador! Acham que ele o aceitaria com prazer e atenderia os seus pedidos? Eu, o Senhor Todo-Poderoso, falei. Agora, sacerdotes, orem a Deus e peçam que ele nos abençoe. Mas será que ele vai atender quando vocês estão apresentando ofertas como essas?”
-‭‭Malaquias‬ ‭1:7-9‬ ‭</p>
-
-<p>Eu estava lendo a palavra com minha amiga quando me veio em mente uma pergunta. Deus levantava a mim o seguinte questionamento: “Que ofertas você tem me dado?” </p>
-<p>Em primeiro momento já entendi completamente a pergunta. O que tenho oferecido a Deus?</p>
-<p>Após a vinda de Cristo nós nos tornamos ofertas vivas para Deus, sem mais precisar queimar em altares as oferendas ao Senhor! </p>
-<p>Mas… se nós somos o sacrifício, devemos ser o bom sacrifício! </p>
-<p>Deus diz se ofender com os animais aleijados, doentes, feridos, cegos! Qual será o animal que temos sido? Qual será a oferta que temos dado a Deus?</p>
-<p>Será que eu tenho mesmo sido uma boa filha?</p> <p>Tenho mantido meu templo limpo para o Espírito Santo habitar?</p> <p>Mantido uma constância em oração e leitura da palavra? </p>
-<p>Nossas ofertas agora são nossas vidas, a partir do momento que nos entregamos para Deus e reconhecemos Jesus como nosso único salvador, entregamos nossa vida a Ele!!! Então, devemos constantemente observar se estamos andando em retidão com a palavra do Senhor, observar nossa relação com o Pai para ver se temos entregado a ele os sacrifícios que Ele merece!</p>
-
-<p>“Vocês dizem: “Já estamos cansados de tudo isso!” e riem de mim e me tratam com desprezo. E ainda me oferecem um animal roubado ou um animal aleijado ou doente. Vocês acham que eu, o Senhor, vou aceitar isso? Maldito seja o mentiroso que me promete um animal perfeito do seu rebanho, mas oferece em sacrifício um animal defeituoso! Eu sou o Rei poderoso, e todas as nações me honram. Eu, o Senhor Todo-Poderoso, estou falando.”
-‭‭Malaquias‬ ‭1:13-14‬ ‭NTLH‬‬</p>
-
-<p>E mais, não prometam aquilo que não cumprirão, pois nosso Deus cumpre tudo o que promete. <3</p>
-<p>Ele é bom, JUSTO e perfeito! Amável e correto.</p> 
-<p>Moisés nos ensina em suas leis como deve ser um sacrifício enquanto no velho testamento, deve ser limpo, sem falhas, bom. </p>
-
-<p>“Portanto, meus irmãos, por causa da grande misericórdia divina, peço que vocês se ofereçam completamente a Deus como um sacrifício vivo, dedicado ao seu serviço e agradável a ele. Esta é a verdadeira adoração que vocês devem oferecer a Deus.”
-‭‭Romanos‬ ‭12:1‬ ‭NTLH‬‬</p>
-
-<p>Qual sacrifício eu tenho dado a Deus? Repense seus atos, em que você tem gastado seu tempo? Suas prioridades, amizades… e assim saberá.</p>
-<p>Não apenas descubra, mas a partir daí mude! Ele te ama e devemos demonstrar nossa reciprocidade <3 .</p>
-
-      <p> Victorya Neves Mattos Silva </p>
-</div>
+ 
   </div>
 </div>
 </body>
@@ -1011,8 +980,7 @@ $year = date("Y");
   $day = $days[$day_31_days_ago];
 
   $day_31_days_ago =  date('j');
-  // $day = $days[$monthC . $today];
-  // echo $day['1'][0]['bookOfTheDay'];
+
   // Inicializa a sessão cURL
     $curl = curl_init();
     $api_key = 'e84e7f810e5b5aeaf2ea03e878efcb61';
@@ -1072,11 +1040,18 @@ function getImage($bookOfTheDay){
     break;
     case 'ex':
       return 'https://images.pexels.com/photos/4017971/pexels-photo-4017971.png?auto=compress&cs=tinysrgb&w=1600';
-    break;
+      break;
+    case 'lv':
+       return 'https://images.pexels.com/photos/4017971/pexels-photo-4017971.png?auto=compress&cs=tinysrgb&w=1600'; 
+       break;
     case 'mt':
       return 'https://images.unsplash.com/photo-1492052722242-2554d0e99e3a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';
     break;
     case 'mc':
+      return 'https://images.unsplash.com/photo-1492052722242-2554d0e99e3a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';
+    case 'lc':
+      return 'https://images.unsplash.com/photo-1492052722242-2554d0e99e3a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';
+    default: 
       return 'https://images.unsplash.com/photo-1492052722242-2554d0e99e3a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';
     break;
   }
