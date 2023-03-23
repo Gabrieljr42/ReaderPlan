@@ -520,7 +520,30 @@ a {
  automateGetDay($day);
 
  ?>
- 
+  <!-- /Div with double the width -->
+  <div class="card example-1">
+  <h1 style="text-align: center; font-size: 36px; margin-bottom: 20px;">Reflexao</h1>
+  <div style="width: 100%; padding: 20px; background-color: #034378; text-align: center; font-family: sans-serif; font-size: 18px; line-height: 1.5; color: white;">
+  <h4>A relação entre Deus e Caim</h4>
+
+<p>“Se tivesse feito o que é certo, você estaria sorrindo; mas você agiu mal, e por isso o pecado está na porta, à sua espera. Ele quer dominá-lo, mas você precisa vencê-lo.”
+‭‭Gênesis‬ ‭4‬:‭7‬ ‭‬ ‭</p>
+
+<p>Caim estava com inveja de Abel, Deus, vendo isso, logo foi alertar Caim que ele poderia cair em pecado se não medisse seus atos.</p>
+<p>Deus viu que Caim estava sensível, que ele tinha dado abertura para a tentação do pecado domina-lo e então disse: “você precisa vence-lo”.</p>
+
+<p>Caim não deu ouvidos a Deus! Este foi seu primeiro erro. Quantas vezes deixamos de ouvir os avisos do Senhor? Quantas vezes Deus nos disse para não fazermos algo que nos levaria à tentação e não demos ouvidos a Ele?</p>
+<p>Nosso Senhor não quer ver-nos mal! Ele nos ama e quer o melhor para nós, por isso Ele sempre nos diz o que devemos ou não fazer; nos basta ouvi-lo e fazer sua vontade.</p> 
+
+<p>Precisamos vencer o pecado, que todos os dias bate à nossa porta! Entregue suas vontades e escolhas para Deus, não faça como Caim, que, por não ouvir o Senhor, foi amaldiçoado e não pôde mais cultivar a terra (Gênesis 4:11-12).</p>
+
+<p>“Não vivam como vivem as pessoas deste mundo, mas deixem que Deus os transforme por meio de uma completa mudança da mente de vocês. Assim vocês conhecerão a vontade de Deus, isto é, aquilo que é bom, perfeito e agradável a ele.”
+Romanos‬ ‭12‬:‭2‬</p>
+
+<p>Você tem ouvido o que o Senhor tem te dito?</p>
+
+  <p> Victorya Neves Mattos Silva </p>
+</div>
   </div>
 </div>
 </body>
