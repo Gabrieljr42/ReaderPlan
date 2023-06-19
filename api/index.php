@@ -524,23 +524,21 @@ a {
   <div class="card example-1">
   <h1 style="text-align: center; font-size: 36px; margin-bottom: 20px;">Reflexao</h1>
   <div style="width: 100%; padding: 20px; background-color: #034378; text-align: center; font-family: sans-serif; font-size: 18px; line-height: 1.5; color: white;">
-  <h4>A relação entre Deus e Caim</h4>
+  <h4>o Deus das tempestades</h4>
+  <p>Leia MARCOS 4:35-41</p>
 
-<p>“Se tivesse feito o que é certo, você estaria sorrindo; mas você agiu mal, e por isso o pecado está na porta, à sua espera. Ele quer dominá-lo, mas você precisa vencê-lo.”
-‭‭Gênesis‬ ‭4‬:‭7‬ ‭‬ ‭</p>
+<p>“Toda a ameaça contra nós está literalmente debaixo de Sua Palavra. Por isso a Bíblia diz que a fé vem pelo ouvir a Palavra – quanto mais ouvimos, mais nos enchemos de fé, e mais o medo se afasta de nós.”</p>
+<p>O medo e a ansiedade, a necessidade de ter tudo estável, sob nosso controle nos afasta de Jesus…</p>
+<p>Quando lemos a palavra do Senhor Ele nos fala de conforto, de perseverança, de amor e de entregar nossos medos e preocupações a Ele! Quando não a lemos, nos esquecemos disso, que Deus é nossa rocha, nosso abrigo e que Ele pode tudo fazer.</p>
+<p>Tenhamos fé nas tempestades… confiemos em Deus, sejamos fortes e corajosos, porque Ele é nossa força e está conosco.</p>
+<p>Se crermos, seremos guiados, mesmo que em meio à tempestade, para o caminho certo; o caminho de Deus.</p>
 
-<p>Caim estava com inveja de Abel, Deus, vendo isso, logo foi alertar Caim que ele poderia cair em pecado se não medisse seus atos.</p>
-<p>Deus viu que Caim estava sensível, que ele tinha dado abertura para a tentação do pecado domina-lo e então disse: “você precisa vence-lo”.</p>
+<p>2Coríntios 12:10 fala: “Eu me alegro também com as fraquezas, os insultos, os sofrimentos, as perseguições e as dificuldades pelos quais passo por causa de Cristo. Porque, quando perco toda a minha força, então tenho a força de Cristo em mim.” ;</p>
+<p>Esse é um versículo que mexe com a gente, porque não queremos demonstrar fraqueza, não queremos ter medo, não gostamos de estar em momentos incertos… mas é em momentos assim que Jesus quer nos mostrar que, no fim de tudo, nossa força real vem dEle! Quando perco toda a minha força, então tenho a força de Cristo em mim.</p>
+<p>Devemos confiar mais no Senhor, aprender a vê-lo em meio as tempestades e entender que quando pensamos estar sem força alguma, o Senhor nos fortalece!</p>
 
-<p>Caim não deu ouvidos a Deus! Este foi seu primeiro erro. Quantas vezes deixamos de ouvir os avisos do Senhor? Quantas vezes Deus nos disse para não fazermos algo que nos levaria à tentação e não demos ouvidos a Ele?</p>
-<p>Nosso Senhor não quer ver-nos mal! Ele nos ama e quer o melhor para nós, por isso Ele sempre nos diz o que devemos ou não fazer; nos basta ouvi-lo e fazer sua vontade.</p> 
 
-<p>Precisamos vencer o pecado, que todos os dias bate à nossa porta! Entregue suas vontades e escolhas para Deus, não faça como Caim, que, por não ouvir o Senhor, foi amaldiçoado e não pôde mais cultivar a terra (Gênesis 4:11-12).</p>
-
-<p>“Não vivam como vivem as pessoas deste mundo, mas deixem que Deus os transforme por meio de uma completa mudança da mente de vocês. Assim vocês conhecerão a vontade de Deus, isto é, aquilo que é bom, perfeito e agradável a ele.”
-Romanos‬ ‭12‬:‭2‬</p>
-
-<p>Você tem ouvido o que o Senhor tem te dito?</p>
+<p>Separe um momento do seu dia para refletir sobre isso e ore ao Senhor reconhecendo: “Pai tu és a minha força”.</p>
 
   <p> Victorya Neves Mattos Silva </p>
 </div>
@@ -699,74 +697,74 @@ $schedule = "
 15 1 Sm 26,27 1Co 1
 16 1 Sm 28,29 1Co 2
 17 1 Sm 30,31 1Co 3
-18 2 Sm 1,2 1Co 4
-19 2 Sm 3,5 1Co 5
-20 2 Sm 6,9 1C0 6
-21 2 Sm 10,11 1Co 7
-22 2 Sm 12 1Co 8
-23 2 Sm 13,14 1Co 9
-24 2 Sm 15,16 1Co 10
-25 2 Sm 17,18 1Co 11
-26 2 Sm 19,20 1Co 12
-27 2 Sm 21,22 1Co 13
-28 2 Sm 23,24 1Co 14
-29 1 Rs 1 1Co 15
-30 1 Rs 2 1Co 16
+18 2Sm 1,2 1Co 4
+19 2Sm 3,5 1Co 5
+20 2Sm 6,9 1C0 6
+21 2Sm 10,11 1Co 7
+22 2Sm 12 1Co 8
+23 2Sm 13,14 1Co 9
+24 2Sm 15,16 1Co 10
+25 2Sm 17,18 1Co 11
+26 2Sm 19,20 1Co 12
+27 2Sm 21,22 1Co 13
+28 2Sm 23,24 1Co 14
+29 1Rs 11Co 15
+30 1Rs 21Co 16
 
 
-1 1 Rs 3,4 2Co 1
-2 1 Rs 5,6 2Co 2
-3 1 Rs 7 2Co 3
-4 1 Rs 8 2Co 4
-5 1 Rs 9,10 2Co 5
-6 1 Rs 11,12 2Co 6
-7 1 Rs 13,14 2Co 7
-8 1 Rs 15,16 2Co 8
-9 1 Rs 17,18 2Co 9
-10 1 Rs 19,20 2Co 10
+1 1Rs 3,4 2Co 1
+2 1Rs 5,6 2Co 2
+3 1Rs 7 2Co 3
+4 1Rs 8 2Co 4
+5 1Rs 9,10 2Co 5
+6 1Rs 11,12 2Co 6
+7 1Rs 13,14 2Co 7
+8 1Rs 15,16 2Co 8
+9 1Rs 17,18 2Co 9
+10 1Rs 19,20 2Co 10
 11 1Rs 21,22 2Co 11
-12 2 Rs 1,2 2Co 12
-13 2 Rs 3 2Co 13
-14 2 Rs 4 Gl 1
-15 2 Rs 5,6 Gl 2
-16 2 Rs 7,8 Gl 3
-17 2 Rs 9,10 Gl 4
-18 2 Rs 11-13 Gl 5
-19 2 Rs 14,15 Gl 6
-20 2 Rs 16,17 Ef 1
-21 2 Rs 18,19 Ef 2
-22 2 Rs 20-22 Ef 3
-23 2 Rs 23,24 Ef 4
-24 2 Rs 25 Ef 5
-25 1 Cr 1 Ef 6
-26 1 Cr 2,3 Fl 1
-27 1 Cr 4,5 Fl 2
-28 1 Cr 6 Fl 3
-29 1 Cr 7,8 Fl 4
-30 1 Cr 9,10 Cl 1
+12 2Rs 1,2 2Co 12
+13 2Rs 3 2Co 13
+14 2Rs 4 Gl 1
+15 2Rs 5,6 Gl 2
+16 2Rs 7,8 Gl 3
+17 2Rs 9,10 Gl 4
+18 2Rs 11-13 Gl 5
+19 2Rs 14,15 Gl 6
+20 2Rs 16,17 Ef 1
+21 2Rs 18,19 Ef 2
+22 2Rs 20-22 Ef 3
+23 2Rs 23,24 Ef 4
+24 2Rs 25 Ef 5
+25 1Cr 1 Ef 6
+26 1Cr 2,3 Fl 1
+27 1Cr 4,5 Fl 2
+28 1Cr 6 Fl 3
+29 1Cr 7,8 Fl 4
+30 1Cr 9,10 Cl 1
 
-1 1 Cr 11,12 Cl 2
-2 1 Cr 13-15 Cl 3
-3 1 Cr 16,17 Cl 4
-4 1 Cr 18-20 1Ts 1
-5 1 Cr 21-23 1Ts 2
-6 1 Cr 24,25 1Ts 3
-7 1 Cr 26,27 1Ts 4
-8 1 Cr 28,29 1Ts 5
-9 2 Cr 1,2 2Ts 1
-10 2 Cr 3-5 2Ts 2
-11 2 Cr 6,7 3Ts 3
-12 2 Cr 8-10 1Tm 1
-13 2 Cr 11-14 1Tm 2
-14 2 Cr 15-17 1Tm 3
-15 2 Cr 18,19 1Tm 4
-16 2 Cr 20,21 1Tm 5
-17 2 Cr 22-24 1Tm 6
-18 2 Cr 25,26 2Tm 1
-19 2 Cr 27-29 2Tm 2
-20 2 Cr 30,31 2Tm 3
-21 2 Cr 32,33 2Tm 4
-22 2 Cr 34-36 Tt 1
+1 1Cr 11,12 Cl 2
+2 1Cr 13-15 Cl 3
+3 1Cr 16,17 Cl 4
+4 1Cr 18-20 1Ts 1
+5 1Cr 21-23 1Ts 2
+6 1Cr 24,25 1Ts 3
+7 1Cr 26,27 1Ts 4
+8 1Cr 28,29 1Ts 5
+9 2Cr 1,2 2Ts 1
+10 2Cr 3-5 2Ts 2
+11 2Cr 6,7 3Ts 3
+12 2Cr 8-10 1Tm 1
+13 2Cr 11-14 1Tm 2
+14 2Cr 15-17 1Tm 3
+15 2Cr 18,19 1Tm 4
+16 2Cr 20,21 1Tm 5
+17 2Cr 22-24 1Tm 6
+18 2Cr 25,26 2Tm 1
+19 2Cr 27-29 2Tm 2
+20 2Cr 30,31 2Tm 3
+21 2Cr 32,33 2Tm 4
+22 2Cr 34-36 Tt 1
 23 Ed 1,2 Tt 2
 24 Ed 3,4 Tt 3
 25 Ed 5,6 Fm 1
@@ -986,7 +984,9 @@ $oneMonthAgo = date('Y-m-d', strtotime("-1 month"));
 
 $day_number = 1 + date('d', strtotime("-1 month"));;
 
-  
+setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+date_default_timezone_set('America/Sao_Paulo');
+
 $month_number = strftime('%B');
 $year = date("Y");
 
