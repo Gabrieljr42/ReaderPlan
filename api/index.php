@@ -708,8 +708,8 @@ $schedule = "
 26 2Sm 19,20 1Co 12
 27 2Sm 21,22 1Co 13
 28 2Sm 23,24 1Co 14
-29 1Rs 11Co 15
-30 1Rs 21Co 16
+29 1Rs 1 1Co 15
+30 1Rs 2 1Co 16
 
 
 1 1Rs 3,4 2Co 1
