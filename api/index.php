@@ -554,6 +554,7 @@ function automateGetDay($today){
   header('Content-type: text/plain; charset=utf-8');
 $schedule = "
 1 Gn 1-3 Mt 1
+1 Gn 1-3 Mt 1
 2 Gn 4-6 Mt 2
 3 Gn 7-10 Mt 3
 4 Gn 11-13 Mt 4
