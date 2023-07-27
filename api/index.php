@@ -738,10 +738,10 @@ $schedule = "
 23 2Rs 23,24 Ef 4
 24 2Rs 25 Ef 5
 25 1Cr 1 Ef 6
-26 1Cr 2,3 Fl 1
-27 1Cr 4,5 Fl 2
-28 1Cr 6 Fl 3
-29 1Cr 7,8 Fl 4
+26 1Cr 2,3 Fp 1
+27 1Cr 4,5 Fp 2
+28 1Cr 6 Fp 3
+29 1Cr 7,8 Fp 4
 30 1Cr 9,10 Cl 1
 
 1 1Cr 11,12 Cl 2
